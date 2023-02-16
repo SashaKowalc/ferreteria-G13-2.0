@@ -24,6 +24,9 @@ const usersController = {
   registro: (req, res) => {
     res.render("register");
   },
+  editar: (req, res) => {
+    res.render("edit-user")
+  },
 
   //NUEVO USUARIO
   registrar: (req, res) => {
@@ -53,9 +56,9 @@ const usersController = {
       nombre_Usuario: req.body.usuario,
       imagen: img,
     })
-      .then(function (users) {
-        if (users) {
-          res.redirect("/");
+      .then(function (user) {
+        if (user) {
+          res.render("Usuario",{user});
         } else {
           res.status(400).send("error");
         }
@@ -80,7 +83,7 @@ const usersController = {
           }
 
           let imagen = user;
-          res.render("home", { user });
+          res.render("Usuario", { user });
         } else {
           res.render("login", {
             errors: {
@@ -145,7 +148,7 @@ const usersController = {
   */
 
   actualizar: (req, res) => {
-    console.log("actualizar");
+    console.log("--------------actualizar----------");
     // MODIFICAR CUANDO CARGA LA IMAGEN QUE YA TIENE
     let img;
     if (req.files && req.files.length > 0) {
@@ -154,38 +157,35 @@ const usersController = {
       img = "default-image.png";
     }
     let pass = bcrypt.hashSync(req.query.contrasenia, 10);
+    console.log("----------------------------------------)")
     let usuario = {
-      nombre: req.query.nombre,
-      apellido: req.query.apellido,
-      direccion: req.query.direccion,
-      localidad: req.query.localidad,
-      pais: req.query.pais,
-      edad: req.query.edad,
-      email: req.query.email,
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      direccion: req.body.direccion,
+      localidad: req.body.localidad,
+      pais: req.body.pais,
+      edad: req.body.edad,
+      email: req.body.email,
       contraseña: pass,
-      nombre_Usuario: req.query.usuario,
+      nombre_Usuario: req.body.usuario,
       imagen: img,
     };
     db.Usuarios.update(usuario, {
       where: { usuario_id: req.params.id },
     })
-      .then(function (user) {
+    
         res.render("Usuario", { user });
-      })
-      .catch((error) => console.log(error));
-  },
-  editar: (req, res) => {
-    db.Usuarios.findOne({ usuario_id: req.params.id })
-      .then(function (user) {
-        res.render("edit-user", { user });
-      })
-      .catch((err) => console.log(err));
+     
   },
 
+
   perfil: (req, res) => {
-    db.Usuarios.findOne({ id: req.params.id }).then(function (user) {
+    db.Usuarios.findOne({
+      where:{ id: req.params.id }})
+    .then(function (user) {
       res.render("Usuario", { user });
-    });
+    })
+    
   },
   logout: (req, res) => {
     res.clearCookie("userEmail");

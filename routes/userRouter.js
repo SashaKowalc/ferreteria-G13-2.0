@@ -7,6 +7,7 @@ const path = require('path');
 
 const db = require('../database/models/');
 const fs = require('fs');
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 
 
 
@@ -29,22 +30,14 @@ const storage = multer.diskStorage({
 const upload = multer ({storage: storage})
 // // LOGIN
 router.get('/login', userController.login);
-router.post('/home/', userController. processLogin);
+router.post('/login/', userController. processLogin);
 router.get('/logout', userController.logout);
 // // NUEVO USUARIO
 router.get('/registro', userController.registro);
-router.post('/registro/', upload.any(''), userController.registrar)
+router.post('/registro/', upload.any(''),userLoggedMiddleware, userController.registrar)
 router.get('/editar/:id/',userController.editar);
-router.get('/actualizor/:id/', upload.any(''), userController.actualizar)
+router.post('/editar/:id/', upload.any(''), userController.actualizar)
 router.get('/perfil/:id/', userController.perfil);
-
-  
-
-
-
-
-
-
 
 
 
