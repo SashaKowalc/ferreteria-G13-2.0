@@ -14,9 +14,6 @@ let PORT = 3030;
 app.listen(PORT, () => console.log("Servidor corriendo en el puerto: " + PORT));
 
 //--------------------  MIDDLEWARE ------------------------//
-app.use(express.static('public'));
-
-app.use(methodOverride('_method'));   
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -25,6 +22,9 @@ app.use(session({
 app.use(cookies());   
 app.use(userLoggedMiddleware);
 app.use(express.urlencoded({ extended: false }));   
+app.use(express.static('public'));
+
+app.use(methodOverride('_method'));   
    
 
 
