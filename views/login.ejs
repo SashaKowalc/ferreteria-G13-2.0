@@ -21,13 +21,22 @@
                 <div class="group-register" id="login1">
                         <input required type="text" class="input-text" id="usuario"  name ="email"><span class="barra"></span>
                         <label for="usuario" class="lbl-text">Correo electronico</label>
-                   
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                        <% } %>
                 </div>
 
                 <!-- CONTRASENA -->
                 <div class="group-register" id="login2">
                         <input required type="password" class="input-text" id="contraseña" name="contraseña"><span class="barra"></span>
                         <label for="contraseña" class="lbl-text">Contraseña</label>
+                        <% if (locals.errors && errors.pass) { %>
+                            <div class="text-danger">
+                                <%= errors.pass.msg %>
+                            </div>
+                        <% } %>
                 </div>
 
                 <button type="submit" class="corrido">Iniciar Sesion</button>
@@ -39,17 +48,12 @@
                         <input type="checkbox"  name="remember_user">Recordar mi usuario
                     </label>
                 </div>
+                <div class="error">
                 
             </div>
         </form>
-        
+
         
     </main>
-    <% if(typeof validaciones!='undefined') { %>
-      <% validaciones.forEach ((validacion)=>{ %>
-        <strong><%= validacion.msg %> </strong>
-        <% }) %>
-
-    <% } %>
-    <!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
-    <%- include('./partials/footer.ejs')  %> 
+<!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %> 

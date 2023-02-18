@@ -4,9 +4,9 @@ const userController = require('../controllers/userController');
 const multer = require ('multer');
 const path = require('path');
 const logueadoMiddleware= require('../middlewares/logueadoMiddleware');
-
+const userFormMiddleware = require ('../middlewares/userFormMiddleware');
 const db = require('../database/models/');
-const {body, check,validationResult} = require ('express-validator')
+
 const fs = require('fs');
 
 
@@ -33,7 +33,7 @@ router.post('/login',userController.processLogin);
 router.get('/logout', userController.logout);
 // // NUEVO USUARIO
 router.get('/registro', userController.registro);
-router.post('/registro/',upload.any(''), userController.registrar)
+router.post('/registro/',upload.any(''),userFormMiddleware, userController.registrar)
 router.get('/editar/:id/',userController.editar);
 router.post('/perfil/:id/', upload.any(''), userController.actualizar)
 router.get('/perfil/:id/',userController.perfil)

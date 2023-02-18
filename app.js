@@ -7,7 +7,7 @@ const methodOverride =  require('method-override');
 const cookies = require('cookie-parser');
 const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-const logueadoMiddleware=require('./middlewares/logueadoMiddleware');
+
 let PORT = 3030;
 
 //--------------------  APP LISTEN ------------------------//
@@ -22,13 +22,10 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))   
-app.use(express.urlencoded({ extended: true }));   
-app.use(express.json());   
 app.use(cookies());   
 app.use(userLoggedMiddleware);
-
-
-
+app.use(express.urlencoded({ extended: false }));   
+   
 
 
 //--------------------  TEMPLATE ENGINE  ------------------------//
