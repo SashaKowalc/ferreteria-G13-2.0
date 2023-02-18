@@ -22,7 +22,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))   
-app.use(express.urlencoded({ extended: false }));   
+app.use(express.urlencoded({ extended: true }));   
 app.use(express.json());   
 app.use(cookies());   
 app.use(userLoggedMiddleware);

@@ -3,7 +3,7 @@ const {body, check} = require ('express-validator')
 console.log("Valida usuario")
 
 const userFormMiddleware = [
-    check('nombre').notEmpty().withMessage('Debes completar el campo Nombre'),
+    check('nombre').exists().notEmpty().withMessage('Debes completar el campo Nombre'),
     check('apellido').notEmpty().withMessage('Debes completar el campo Apellido'),
     check('edad').notEmpty().withMessage('Debes completar el campo Edad'),
     check('direccion').notEmpty().withMessage('Debes completar el campo Direccion'),
