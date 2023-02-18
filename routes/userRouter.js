@@ -3,11 +3,11 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const multer = require ('multer');
 const path = require('path');
-
+const logueadoMiddleware= require('../middlewares/logueadoMiddleware');
 
 const db = require('../database/models/');
-const fs = require('fs');
 
+const fs = require('fs');
 
 
 const User = db.Usuarios;
@@ -28,15 +28,16 @@ const storage = multer.diskStorage({
 
 const upload = multer ({storage: storage})
 // // LOGIN
-router.get('/login', userController.login);
-router.post('/home/', userController. processLogin);
+router.get('/login', logueadoMiddleware,userController.login);
+router.post('/login',userController.processLogin);
 router.get('/logout', userController.logout);
 // // NUEVO USUARIO
 router.get('/registro', userController.registro);
-router.post('/registro/', upload.any(''), userController.registrar)
+router.post('/registro/',upload.any(''), userController.registrar)
 router.get('/editar/:id/',userController.editar);
-router.get('/actualizor/:id/', upload.any(''), userController.actualizar)
-router.get('/perfil/:id/', userController.perfil);
+router.post('/perfil/:id/', upload.any(''), userController.actualizar)
+router.get('/perfil/:id/',userController.perfil)
+router.post('/home/', userController.home);
 
   
 

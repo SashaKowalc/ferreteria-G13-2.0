@@ -6,6 +6,7 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const bcryptjs = require("bcryptjs");
 const { Sequelize } = require("../database/models");
+const { Console } = require("console");
 const sal = bcrypt.genSaltSync(10);
 const Op = Sequelize.Op;
 
@@ -17,7 +18,9 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const usersController = {
   // LOGIN
   login: (req, res) => {
+    
     res.render("login");
+    
   },
 
   // REGISTRO
@@ -69,37 +72,40 @@ const usersController = {
     // req.session.userLogged = email
 
     // res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+    const errores = validationResult(req);
+  if(!errores.isEmpty()){
+   res.render('login', {errores: errores.array()})
+  }
     db.Usuarios.findOne({
       where: { email: req.body.email },
-    })
-      .then((user) => {
+    }) .then((user) => {
+      
         if (bcrypt.compareSync(req.body.contraseña, user.contraseña)) {
-          req.session.userLogged = user;
+          req.session.userLogged= user;
           if (req.body.remember_user) {
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
           }
-
-          let imagen = user;
+         
           res.render("home", { user });
         } else {
           res.render("login", {
             errors: {
               email: {
                 msg: "La contraseña es incorrecta",
-              },
-            },
-          });
+              }
+            }
+          })
         }
       })
       .catch((err) => {
         res.render("login", {
           errors: {
-            email: {
-              msg: "error de conexion",
-            },
-          },
-        });
-      });
+            password: {
+              msg: "Credenciales invalidas",
+            }
+          }
+        })
+      })
 
     /*let contraseña=req.body.contraseña
     db.Usuarios.findOne(contraseña)
@@ -145,7 +151,7 @@ const usersController = {
   */
 
   actualizar: (req, res) => {
-    console.log("actualizar");
+    console.log("actualizar-------------------------------------------------");
     // MODIFICAR CUANDO CARGA LA IMAGEN QUE YA TIENE
     let img;
     if (req.files && req.files.length > 0) {
@@ -153,40 +159,50 @@ const usersController = {
     } else {
       img = "default-image.png";
     }
-    let pass = bcrypt.hashSync(req.query.contrasenia, 10);
+    let pass = bcrypt.hashSync(req.body.contrasenia, 10);
     let usuario = {
-      nombre: req.query.nombre,
-      apellido: req.query.apellido,
-      direccion: req.query.direccion,
-      localidad: req.query.localidad,
-      pais: req.query.pais,
-      edad: req.query.edad,
-      email: req.query.email,
+      usuario_id: req.params.id,
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      direccion: req.body.direccion,
+      localidad: req.body.localidad,
+      pais: req.body.pais,
+      edad: req.body.edad,
+      email: req.body.email,
       contraseña: pass,
-      nombre_Usuario: req.query.usuario,
+      nombre_Usuario: req.body.usuario,
       imagen: img,
     };
     db.Usuarios.update(usuario, {
       where: { usuario_id: req.params.id },
     })
       .then(function (user) {
-        res.render("Usuario", { user });
+        res.render("Usuario",{user})
       })
       .catch((error) => console.log(error));
   },
   editar: (req, res) => {
-    db.Usuarios.findOne({ usuario_id: req.params.id })
-      .then(function (user) {
-        res.render("edit-user", { user });
+    db.Usuarios.findOne({where:{ usuario_id: req.params.id }})
+      .then(function (usuario) {
+        res.render("edit-user", { usuario});
       })
       .catch((err) => console.log(err));
   },
 
   perfil: (req, res) => {
-    db.Usuarios.findOne({ id: req.params.id }).then(function (user) {
-      res.render("Usuario", { user });
+
+    db.Usuarios.findOne({where:{ usuario_id: req.params.id,
+      
+       }}).then(function (user) {
+      res.render("Usuario",{user})
     });
   },
+home:function (req, res) {
+res.render("home")
+
+},
+
+
   logout: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();

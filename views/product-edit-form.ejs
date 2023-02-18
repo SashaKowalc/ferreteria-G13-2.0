@@ -62,10 +62,10 @@
                 </div>
                 <!--CATEGORIA-->
                 <section class="categorias"> Categorias:
-                    <% categorias.forEach(categoria => { %>
+                    <% categoriasEdit.forEach(categoria => { %>
                         <div class="categoria">
                             <label for="categoria"><%=categoria.nombre %> </label>
-                            <input type="checkbox" name="categoria" value=<%=categoria.nombre%> 
+                            <input type="checkbox" name="categoria" value="<%=categoria.nombre%> "
                             <% if (categoria.estado) { %>
                                 checked
                             <% } %> >
@@ -73,9 +73,8 @@
                     <% }) %>
                 </section>
                 <!--FOTO-->
-                <div class="group-register" id="foto">
-                    <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="foto" 
-                    value="<%=producto.foto%>">
+                <div class="group-register" id="cargar-imagen">
+                    <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="img">
                 </div>
                 <!--DESCRIPCION-->
                 <div class="group-register" id="descripcion">
