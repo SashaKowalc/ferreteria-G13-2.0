@@ -1,17 +1,17 @@
     let formulario = document.getElementById('form-register')
     let inputs = document.querySelectorAll('.input-text')
 
-    const expresiones = {
-        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        direccion: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        localidad: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        pais: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        edad: /^[0-9]{1,2}$/, // La edad es válida entre 1-120.
-        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        usuario: /^[a-zA-Z0-9\_\-]{8,20}$/, // Letras, numeros, guion y guion_bajo.
-        contraseña: /^.{8,20}$/, // 8 a 20 digitos.
-    }
+//     const expresiones = {
+//         nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+//         apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+//         direccion: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+//         localidad: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+//         pais: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+//         edad: /^[0-9]{1,2}$/, // La edad es válida entre 1-120.
+//         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+//         usuario: /^[a-zA-Z0-9\_\-]{8,20}$/, // Letras, numeros, guion y guion_bajo.
+//         contraseña: /^.{8,20}$/, // 8 a 20 digitos.
+//     }
 
     let campos = {
         nombre: false,
@@ -110,12 +110,12 @@
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (campos.nombre == true && campos.apellido == true && campos.direccion == true && campos.localidad == true && campos.pais == true && campos.edad == true && campos.email == true && campos.usuario == true && campos.contraseña == true){
-        document.getElementById('formularioMensaje').classList.add('formularioMensaje-activo')
-        formulario.submit();
-    }else {
-        document.getElementById('formularioMensaje').classList.add('formularioMensaje-activo')
-    }
+//     if (campos.nombre == true && campos.apellido == true && campos.direccion == true && campos.localidad == true && campos.pais == true && campos.edad == true && campos.email == true && campos.usuario == true && campos.contraseña == true){
+//         document.getElementById('formularioMensaje').classList.add('formularioMensaje-activo')
+//         formulario.reset();
+//     }else {
+//         document.getElementById('formularioMensaje').classList.add('formularioMensaje-activo')
+//     }
 
 })
 
