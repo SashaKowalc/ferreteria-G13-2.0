@@ -15,13 +15,14 @@
     <!--MAIN -->
     <main>
             
-        <div>
+        <div> 
             <h2>Perfil</h2>
             <h2><%= user.email %></h2>
-            <h2><%= user.usuario_id %></h2>
             <h2><%= user.nombre %></h2>
+            <h2><%= user.usuario_id %></h2>
             <img src="<%=user.imagen %> "  alt="">
-            <a href="/user/editar/:<%= user.usuario_id %>/">Editar usuario</a>
+            <button ><a href="/user/editar/<%= user.usuario_id %>/">Editar usuario </a></button>
+            
     </div>
     </main>
 <!-- SUSCRIPCION + FOOTER + COPIRIGHT-->

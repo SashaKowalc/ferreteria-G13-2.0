@@ -21,50 +21,50 @@
             <% } %>
         </section>       
         <!--FORMULARIO DE REGISTRO DE USUARIO-->
-        <form action="/user/editar/<%= user.usuario.id %>/" method="POST" class="form-register" id="form-register" enctype="multipart/form-data">
+        <form action="/user/perfil/<%= usuario.usuario_id %>/" method="post" class="form-register" id="form-register" enctype="multipart/form-data">
             <h1 class="login">Editar Usuario</h1>
             <div class="div-form-register">
                 <!-- NOMBRE -->
                 <div class="group-register" id="1">
-                    <input required type="text" class="input-text" id="nombre" name="nombre" ><span class="barra"></span>
+                    <input required type="text" class="input-text" id="nombre" name="nombre" value="<%=usuario.nombre %>"><span class="barra"></span>
                     <label for="nombre" class="lbl-text">Nombre</label>
                 </div>
 
                 <!-- APELLIDO -->
                 <div class="group-register" id="2">
-                    <input required type="text" class="input-text" id="apellido" name="apellido"   ><span class="barra"></span>
+                    <input required type="text" class="input-text" id="apellido" name="apellido"   value="<%= usuario.apellido%>"><span class="barra"></span>
                     <label for="apellido" class="lbl-text">Apellido</label>
                 </div>
 
                 <!-- DIRECCION -->
                 <div class="group-register" id="3">
-                    <input required type="text" class="input-text" id="direccion" name="direccion"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="direccion" name="direccion"value="<%=usuario.direccion%>"><span class="barra"></span>
                     <label for="direccion" class="lbl-text">Direccion</label>
                 </div>
                 <div class="group-register" id="4">
-                    <input required type="text" class="input-text" id="localidad" name="localidad"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="localidad" name="localidad"value="<%=usuario.localidad%>"><span class="barra"></span>
                     <label for="localidad" class="lbl-text">Localidad</label>
                 </div>
                 <div class="group-register" id="5">
-                    <input required type="text" class="input-text" id="pais" name="pais"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="pais" name="pais"value="<%=usuario.pais%>"><span class="barra"></span>
                     <label for="pais" class="lbl-text">Pais</label>
                 </div>
 
                 <!-- EDAD -->
                 <div class="group-register" id="6">
-                    <input required type="number" class="input-text" id="edad" name="edad" ><span class="barra"></span>
+                    <input required type="number" class="input-text" id="edad" name="edad" value="<%=usuario.edad%>"><span class="barra"></span>
                     <label for="edad" class="lbl-text">Edad</label>
                 </div>
 
                 <!-- CORREO ELECTRONICO -->
                 <div class="group-register" id="7">
-                    <input required type="email" class="input-text" id="mail" name="email"<span class="barra"></span>
+                    <input required type="email" class="input-text" id="mail" name="email"value="<%=usuario.email%>" ><span class="barra"></span>
                     <label for="mail" class="lbl-text">Correo Electronico</label>
                 </div>
 
                 <!-- USUARIO -->
                 <div class="group-register" id="8">
-                    <input required type="text" class="input-text" id="usuario" name="nombreUsuario" ario%>"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="usuario" name="nombreUsuario" value="<%=usuario.nombre_Usuario%>"><span class="barra"></span>
                     <label for="usuario" class="lbl-text">Nombre de Usuario</label>
                 </div>
 
@@ -72,8 +72,8 @@
                 <div class="tipo-usuario" >
                     <label for="tipoUsuario" class="lbl-text-tipo">Tipo de Usuario</label>
                     <select name="tipoUsuario" id="11" class="tipoUsuario">
-                        <option nistrador</option>
-                        <option ption>
+                        <option value="administrador">Administrador</option>
+                        <option value="cliente">Cliente</option>
                     </select>
                 </div>
 
@@ -88,9 +88,10 @@
                     <input required type="password" class="input-text" id="repetirContrasenia" name="repetirContrasenia"><span class="barra"></span>
                     <label for="repetirContrasenia" class="lbl-text">Repetir Contraseña</label>
                 </div>
-                <div class="imagen">
-                    <input type="file"   name="imagen" >
-                </div> 
+                <div class="group-register" id="foto">
+                <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="foto" 
+                value="<%=usuario.imagen%>">
+            </div>
             </div>
                 <button type="submit">Editar</button>
                 <p class="login"><a href="/login">¿Ya estás registrado? Inicia sesión acá!</a></p>

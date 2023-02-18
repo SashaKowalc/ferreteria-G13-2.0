@@ -23,14 +23,13 @@
         <section class="icono">   
             <% if (!locals.isLogged) { %>
             
-                <a class="abajo2"href="/user/login"><i class="ion-person"></i></a>
-            
-            <% }  %>
-            <% if (locals.isLogged) { %>
+                <p class="abajo2"><a href="/user/login"><i class="ion-person"></i></a></p>
+               
+            <% } else { %>
                 <p class="abajo3"><%= locals.userLogged.email %></p> 
                 
-                    <p class="abajo"><a href="/user/logout"><i class="fa-solid fa-person-walking-arrow-right"></i></a></p>
-                    <a class="abajo2"href="/user/perfil/"><i class="ion-person"></i></a>
+                    <p class="abajo2"><a href="/user/logout"><i class="fa-solid fa-person-walking-arrow-right"></i></a></p>
+                    <p class="abajo"><a href="/user/perfil/<%=locals.userLogged.usuario_id%>"><i class="ion-person"></i></a></p>
                 
                 <% }  %>
         </section>
