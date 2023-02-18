@@ -2,8 +2,8 @@
     let inputs = document.querySelectorAll('.input-text')
 
     const expresiones = {
-        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+        nombre: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos. 
+        apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
         // direccion: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
         direccion:  /^[a-zA-ZÀ-ÿ-Z0-9\s]{1,40}$/, // Letras, numeros y espacios, pueden llevar acentos.
         localidad: /^[a-zA-ZÀ-ÿ-Z0-9\s]{1,40}$/, // Letras, numeros y espacios, pueden llevar acentos.
@@ -135,8 +135,8 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (campos.nombre == true && campos.apellido == true && campos.direccion == true && campos.localidad == true && campos.pais == true && campos.edad == true && campos.email == true && campos.usuario == true && campos.contrasenia == true){
-        document.getElementById('formularioMensaje').classList.add('formularioMensaje-activo')
-        formulario.reset();
+        document.getElementById('formularioMensaje').classList.remove('formularioMensaje-activo')
+        formulario.submit();
     }else {
         document.getElementById('formularioMensaje').classList.add('formularioMensaje-activo')
     }
