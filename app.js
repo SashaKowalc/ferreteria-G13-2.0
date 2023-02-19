@@ -6,7 +6,7 @@ const usersRouter= require ("./routes/userRouter");
 const methodOverride =  require('method-override');
 const cookies = require('cookie-parser');
 const session = require('express-session');
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
 
 let PORT = 3030;
 
@@ -20,7 +20,7 @@ app.use(session({
     saveUninitialized: false
 }))   
 app.use(cookies());   
-app.use(userLoggedMiddleware);
+
 app.use(express.urlencoded({ extended: false }));   
 app.use(express.static('public'));
 

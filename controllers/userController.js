@@ -90,7 +90,10 @@ const usersController = {
           if (req.body.remember_user) {
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
           }
-         
+          if (req.session.userLogged) {
+            res.locals.isLogged = true;
+            res.locals.userLogged = req.session.userLogged;
+          }
           res.render("home", { user });
         } else {
           res.render("login", {
