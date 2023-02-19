@@ -6,6 +6,7 @@ const usersRouter= require ("./routes/userRouter");
 const methodOverride =  require('method-override');
 const cookies = require('cookie-parser');
 const session = require('express-session');
+const bodyParser = require('body-parser')
 
 
 let PORT = 3030;
@@ -16,8 +17,8 @@ app.listen(PORT, () => console.log("Servidor corriendo en el puerto: " + PORT));
 //--------------------  MIDDLEWARE ------------------------//
 app.use(session({
     secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }))   
 app.use(cookies());   
 
@@ -26,7 +27,7 @@ app.use(express.static('public'));
 
 app.use(methodOverride('_method'));   
    
-
+app.use(bodyParser.json({ type: 'application/*+json' }))
 
 //--------------------  TEMPLATE ENGINE  ------------------------//
 app.set('view engine', 'ejs');
