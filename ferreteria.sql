@@ -27,6 +27,7 @@ CREATE TABLE `ferreteria`.`categoria_usuario` (
 
 CREATE TABLE `ferreteria`.`usuarios` (
   `usuario_id` INT NOT NULL AUTO_INCREMENT,
+  `categoria_id` INT NOT NULL,
   `nombre` VARCHAR(100) NOT NULL,
   `apellido` VARCHAR(45) NOT NULL,
   `direccion` VARCHAR(200) NOT NULL,
@@ -36,8 +37,13 @@ CREATE TABLE `ferreteria`.`usuarios` (
   `email` VARCHAR(100) NOT NULL,
   `nombre_usuario` VARCHAR(45) NOT NULL,
   `contraseña` VARCHAR(100) NOT NULL,
-  `imagen` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`usuario_id`));
+  `usuariocol` VARCHAR(45) NULL,
+  PRIMARY KEY (`usuario_id`),
+  CONSTRAINT `categoria_id`
+    FOREIGN KEY (`categoria_id`)
+    REFERENCES `ferreteria`.`categoria_usuario` (`categoria_usuario_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
 
 
@@ -123,13 +129,13 @@ CREATE TABLE `ferreteria`.`carritos` (
   CONSTRAINT `producto_fk`
     FOREIGN KEY (`producto_fk`)
     REFERENCES `ferreteria`.`productos` (`producto_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `categoria_fk`
     FOREIGN KEY (`categoria_fk`)
     REFERENCES `ferreteria`.`categorias` (`categoria_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
     
     
 INSERT INTO `productos` VALUES 	(1,'Taladro','Forest','2500w','Azul',7500,'Pedrito','6ksv',5,20,'/images/taladro.jpg','El mejor taladro'),
@@ -141,6 +147,6 @@ INSERT INTO `categorias` VALUES (1,'herramientas'), (2,'pintura'), (3,'jardineri
 
 INSERT INTO `categoria_usuario` VALUES (1,'administrador'), (2,'cliente');
 
-/*INSERT INTO `producto_categoria` VALUES (1,1,1), (2,1,2), (3,3,1);*/
+INSERT INTO `producto_categoria` VALUES (1,1,1), (2,1,2), (3,4,1);
 INSERT INTO `producto_categoria` VALUES (4,2,2), (5,2,4), (6,4,1), (7,5,1);
 
