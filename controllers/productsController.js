@@ -238,7 +238,14 @@ const productsController = {
       }else{
         res.render('forms', {errors : errors.array(), old: req.body, categorias})
       }
-    }
+    },
+    mostrar:function(req, res){
+      db.Productos.findAll()
+      .then(function(productos) {
+        res.render('listaProductosPrueba', {productos})
+      })
+
+  }
 }
 
 
