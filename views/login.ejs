@@ -21,7 +21,11 @@
                 <div class="group-register" id="login1">
                         <input required type="text" class="input-text" id="usuario"  name ="email"><span class="barra"></span>
                         <label for="usuario" class="lbl-text">Correo electronico</label>
-                   
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                        <% } %>
                 </div>
 
                 <!-- CONTRASENA -->
@@ -39,17 +43,21 @@
                         <input type="checkbox"  name="remember_user">Recordar mi usuario
                     </label>
                 </div>
-                
+                <div class="error">
+                <% if(locals.errors &&errors.email ) {%>
+                  
+                    <p>¡¡¡¡<%= errors.email.msg %>!!!!</p> 
+                  
+                <% } %>
+                <% if(locals.errors &&errors.contraseña ) {%>
+                  
+                 <p>¡¡¡¡<%= errors.contraseña.msg %>!!!!</p> 
+              
+                <% } %>
             </div>
         </form>
-        
+
         
     </main>
-    <% if(typeof validaciones!='undefined') { %>
-      <% validaciones.forEach ((validacion)=>{ %>
-        <strong><%= validacion.msg %> </strong>
-        <% }) %>
-
-    <% } %>
-    <!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
-    <%- include('./partials/footer.ejs')  %> 
+<!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
+<%- include('./partials/footer.ejs')  %> 

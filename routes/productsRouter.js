@@ -30,7 +30,7 @@ router.post('/crear/', upload.any(''), productFormMiddleware , productsControlle
 router.get('/producto/:id/', productsController.producto);
 
 router.get('/filtrar', productsController.filtrar);
-
+router.get('/mostrar', productsController.mostrar)
 // EDITAR PRODUCTO
 router.get('/editar/:id/', productsController.editar);
 router.put('/editar/:id/', upload.any(''), productsController.update)

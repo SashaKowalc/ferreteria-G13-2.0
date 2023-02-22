@@ -6,7 +6,7 @@ const path = require('path');
 const logueadoMiddleware= require('../middlewares/logueadoMiddleware');
 
 const db = require('../database/models/');
-const {body, check,validationResult} = require ('express-validator')
+
 const fs = require('fs');
 
 

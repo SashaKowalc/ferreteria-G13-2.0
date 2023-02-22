@@ -177,7 +177,7 @@ const usersController = {
       where: { usuario_id: req.params.id },
     })
       .then(function (user) {
-        res.render("Usuario",{user})
+        res.redirect("/home")
       })
       .catch((error) => console.log(error));
   },
@@ -211,3 +211,4 @@ res.render("home")
 };
 
 module.exports = usersController;
+
