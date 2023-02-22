@@ -61,8 +61,6 @@ const usersController = {
       .then(function (users) {
         if (users) {
           res.redirect("/");
-        } else {
-          res.status(400).send("error");
         }
       })
       .catch((error) => console.log(error));
