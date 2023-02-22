@@ -230,7 +230,7 @@ const productsController = {
           })
         })
         .then( () =>{
-          res.redirect(`/productos`);
+          res.redirect(`/productos/mostrar`);
         })
         .catch((error) => console.log(error));
 
