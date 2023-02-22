@@ -30,11 +30,13 @@ const usersController = {
 
   //NUEVO USUARIO
   registrar: (req, res) => {
-    let errors = validationResult(req);
-    console.log(validationResult(req));
+    let errors = validationResult (req);
+      console.log("----------------------------------"+validationResult(req));
 
-    console.log("DATOS CORRECTOS");
-    let img;
+      if (errors.isEmpty()){
+        console.log("DATOS CORRECTOS")
+        let img;
+
 
     if (req.files.length > 0) {
       img = "/images/" + req.files[0].filename;
@@ -64,8 +66,11 @@ const usersController = {
         }
       })
       .catch((error) => console.log(error));
+  }  else{
+    console.log("Entra por errores")
+    res.render('register', {errors : errors.array(), old: req.body})
+  }
   },
-
   processLogin: (req, res) => {
     // let contraseña;
     // let email;

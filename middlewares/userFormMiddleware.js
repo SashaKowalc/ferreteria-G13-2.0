@@ -1,9 +1,9 @@
 const {body, check} = require ('express-validator')
-
+const path = require('path');
 console.log("Valida usuario")
 
 const userFormMiddleware = [
-    check('nombre').exists().notEmpty().withMessage('Debes completar el campo Nombre'),
+    check('nombre').notEmpty().withMessage('Debes completar el campo Nombre'),
     check('apellido').notEmpty().withMessage('Debes completar el campo Apellido'),
     check('edad').notEmpty().withMessage('Debes completar el campo Edad'),
     check('direccion').notEmpty().withMessage('Debes completar el campo Direccion'),
@@ -12,16 +12,29 @@ const userFormMiddleware = [
     check('email')
         .notEmpty().withMessage('Debes completar el campo Correo electronico')
         .isEmail().withMessage('Debe ingrear un Email valido'),
-    check('nombreUsuario')
+    check('usuario')
         .notEmpty().withMessage('Debes completar el campo Nombre usuario')
         .isLength({min:8, max:20}).withMessage("El nombre de usuario debe tener como minimo 8 caracteres y maximo 20 caracteres"),
-    check('contraseña')
+    check('contrasenia')
         .notEmpty().withMessage('Debes completar el campo Contraseña')
         .isLength({min:8, max:20}).withMessage("La contraseña debe tener como minimo 8 caracteres y maximo 20 caracteres"),
-    check('repetirContraseña')
+    check('repetirContrasenia')
         .notEmpty().withMessage('Debes completar el campo Repetir Contraseña')   
-        .isLength({min:8, max:20}).withMessage("La contraseña debe tener como minimo 8 caracteres y maximo 20 caracteres")
-      
+        .isLength({min:8, max:20}).withMessage("La contraseña debe tener como minimo 8 caracteres y maximo 20 caracteres"),
+    check('img').custom((value, { req }) => {
+            let file = req.file;
+            let acceptedExtensions = ['.jpg', '.png', '.gif'];
+    
+            if (file) {
+            
+                let fileExtension = path.extname(file.originalname);
+                if (!acceptedExtensions.includes(fileExtension)) {
+                    throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                }
+            }
+    
+            return true;
+        })  
     
 ]
 
