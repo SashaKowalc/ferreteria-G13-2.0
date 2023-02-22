@@ -31,7 +31,7 @@ const usersController = {
   //NUEVO USUARIO
   registrar: (req, res) => {
     let errors = validationResult (req);
-      console.log("----------------------------------"+validationResult(req));
+      console.log(validationResult(req));
 
       if (errors.isEmpty()){
         console.log("DATOS CORRECTOS")
@@ -182,8 +182,7 @@ const usersController = {
       where: { usuario_id: req.params.id },
     })
       .then(function (user) {
-        res.redirect("/home")
-      })
+        res.redirect("/")})
       .catch((error) => console.log(error));
   },
   editar: (req, res) => {
