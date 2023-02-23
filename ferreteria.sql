@@ -38,6 +38,7 @@ CREATE TABLE `ferreteria`.`usuarios` (
   `nombre_usuario` VARCHAR(45) NOT NULL,
   `contraseña` VARCHAR(100) NOT NULL,
   `imagen` VARCHAR(45) NULL,
+  `tipo_usuario` int not  NULL,
   PRIMARY KEY (`usuario_id`));
 
 
