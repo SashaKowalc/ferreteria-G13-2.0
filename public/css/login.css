@@ -13,7 +13,7 @@
     position: absolute;
     display: contents;
     color: red;
-    margin-top: 170px;
+    margin-top: 59px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -23,7 +23,19 @@
     padding-top: 5px;
 }
 
-
+.error2{
+    position: absolute;
+    display: contents;
+    color: red;
+    margin-top: 59px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 5px;
+}
 
 body  {
     font-family: 'Roboto', sans-serif;

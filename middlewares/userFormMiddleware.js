@@ -3,8 +3,11 @@ const path = require('path');
 console.log("Valida usuario")
 
 const userFormMiddleware = [
-    check('nombre').notEmpty().withMessage('Debes completar el campo Nombre'),
-    check('apellido').notEmpty().withMessage('Debes completar el campo Apellido'),
+    check('nombre').notEmpty().withMessage('Debes completar el campo Nombre')
+    .isLength({min:2}).withMessage("El nombre debe tener al menos 2 caracteres"),
+    check('apellido').notEmpty().withMessage('Debes completar el campo Apellido')
+    .isLength({min:2}).withMessage("El apellido debe tener al menos 2 caracteres"),
+
     check('edad').notEmpty().withMessage('Debes completar el campo Edad'),
     check('direccion').notEmpty().withMessage('Debes completar el campo Direccion'),
     check('localidad').notEmpty().withMessage('Debes completar el campo Localidad'),

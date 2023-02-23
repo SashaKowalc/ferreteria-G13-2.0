@@ -21,11 +21,20 @@
                 <div class="group-register" id="login1">
                         <input required type="text" class="input-text" id="usuario"  name ="email"><span class="barra"></span>
                         <label for="usuario" class="lbl-text">Correo electronico</label>
-                        <% if (locals.errors && errors.email) { %>
-                            <div class="text-danger">
-                                <%= errors.email.msg %>
-                            </div>
-                        <% } %>
+                        <div class="error">
+                            <% if(locals.errors &&errors.email ) {%>
+                              
+                                <p>¡¡¡¡<%= errors.email.msg %>!!!!</p> 
+                              
+                            <% } %>
+                        </div>
+                        <div class="error2">
+                            <% if(locals.errors &&errors.password ) {%>
+                              
+                             <p>¡¡¡¡<%= errors.password.msg %>!!!!</p> 
+                          
+                            <% } %>
+                        </div>
                 </div>
 
                 <!-- CONTRASENA -->
@@ -43,18 +52,7 @@
                         <input type="checkbox"  name="remember_user">Recordar mi usuario
                     </label>
                 </div>
-                <div class="error">
-                <% if(locals.errors &&errors.email ) {%>
-                  
-                    <p>¡¡¡¡<%= errors.email.msg %>!!!!</p> 
-                  
-                <% } %>
-                <% if(locals.errors &&errors.contraseña ) {%>
-                  
-                 <p>¡¡¡¡<%= errors.contraseña.msg %>!!!!</p> 
-              
-                <% } %>
-            </div>
+            
         </form>
 
         

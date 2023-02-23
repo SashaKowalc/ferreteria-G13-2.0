@@ -79,22 +79,22 @@
 
                 <!-- CONTRASENA -->
                 <div class="group-register" id="9">
-                    <input required type="password" class="input-text" id="contrasenia" name="contrasenia" ><span class="barra"></span>
+                    <input required type="password" class="input-text" id="contrasenia" name="contrasenia" value="<%= usuario.contrasenia %>"><span class="barra"></span>
                     <label for="contrasenia" class="lbl-text">Contraseña</label>
                 </div>
 
                 <!-- CONFIRMAR CONTRASENA -->
                 <div class="group-register" id="10">
-                    <input required type="password" class="input-text" id="repetirContrasenia" name="repetirContrasenia"><span class="barra"></span>
+                    <input required type="password" class="input-text" id="repetirContrasenia" name="repetirContrasenia"value="<%= usuario.repetirContrasenia %>"span class="barra"></span>
                     <label for="repetirContrasenia" class="lbl-text">Repetir Contraseña</label>
                 </div>
                 <div class="group-register" id="foto">
-                <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="foto" 
-                value="<%=usuario.imagen%>">
+                <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="img" value="<%=usuario.img%>">
+                <label for="img" name="img"></label> 
             </div>
             </div>
                 <button type="submit">Editar</button>
-                <p class="login"><a href="/login">¿Ya estás registrado? Inicia sesión acá!</a></p>
+                <p class="login"><a href="/user/login">¿Ya estás registrado? Inicia sesión acá!</a></p>
         </form>
     </main>
 <!-- SUSCRIPCION + FOOTER + COPIRIGHT-->

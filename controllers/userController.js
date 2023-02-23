@@ -94,7 +94,7 @@ const usersController = {
           res.render("login", {
             errors: {
               email: {
-                msg: "La contraseña es incorrecta",
+                msg: "credenciales invalidas",
               }
             }
           })
@@ -104,7 +104,7 @@ const usersController = {
         res.render("login", {
           errors: {
             password: {
-              msg: "Credenciales invalidas",
+              msg: "contraseña invalida",
             }
           }
         })
