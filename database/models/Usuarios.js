@@ -49,7 +49,10 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.STRING(100),
              allowNull: false
      },
-    
+     tipo_usuario:{
+        type: dataTypes.INTEGER,
+             allowNull: false
+     },
      
     }
     let config= {

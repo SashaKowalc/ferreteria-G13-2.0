@@ -61,12 +61,14 @@ const usersController = {
       contraseña: pass,
       nombre_Usuario: req.body.usuario,
       imagen: img,
+      tipo_usuario: req.body.tipoUsuario
     })
       .then(function (users) {
-        if (users) {
+  
+          
           res.redirect("/");
-        }
-      })
+        })
+        
       .catch((error) => console.log(error));
   
     console.log("Entra por errores")
@@ -165,6 +167,7 @@ const usersController = {
     } else {
       img = "default-image.png";
     }
+ 
     let pass = bcrypt.hashSync(req.body.contrasenia, 10);
     let usuario = {
       usuario_id: req.params.id,
@@ -178,6 +181,7 @@ const usersController = {
       contraseña: pass,
       nombre_Usuario: req.body.usuario,
       imagen: img,
+      tipo_usuario: req.body.tipoUsuario
     };
     db.Usuarios.update(usuario, {
       where: { usuario_id: req.params.id },
