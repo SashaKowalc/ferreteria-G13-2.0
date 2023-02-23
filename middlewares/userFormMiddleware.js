@@ -25,7 +25,7 @@ const userFormMiddleware = [
         .notEmpty().withMessage('Debes completar el campo Repetir Contraseña')   
         .isLength({min:8, max:20}).withMessage("La contraseña debe tener como minimo 8 caracteres y maximo 20 caracteres"),
     check('img').custom((value, { req }) => {
-            let file = req.file;
+            let file = req.files[0];
             let acceptedExtensions = ['.jpg', '.png', '.gif'];
     
             if (file) {
