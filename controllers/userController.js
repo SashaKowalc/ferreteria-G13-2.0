@@ -30,11 +30,15 @@ const usersController = {
 
   //NUEVO USUARIO
   registrar: (req, res) => {
-    let errors = validationResult (req);
-      console.log(validationResult(req));
+    const resultValidation = validationResult(req);
 
-      if (errors.isEmpty()){
-        console.log("DATOS CORRECTOS")
+		if (resultValidation.errors.length > 0) {
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		
+    }
         let img;
 
 
@@ -64,10 +68,9 @@ const usersController = {
         }
       })
       .catch((error) => console.log(error));
-  }  else{
+  
     console.log("Entra por errores")
-    res.render('register', {errors : errors.array(), old: req.body})
-  }
+    res.render('home', {resultValidation : resultValidation .array(), old: req.body})
   },
   processLogin: (req, res) => {
     // let contraseña;

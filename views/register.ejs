@@ -13,13 +13,7 @@
     <!--MAIN -->
     <main class="register">
         <!--MENSAJE DE ERROR EN CASO QUE FALTE COMPLETAR UN CAMPO O HAYA UN ERROR EN LOS CAMPOS INGRESADOS-->
-        <section class="errores">
-            <% if (locals.errors) { %>
-                <% errors.forEach(error => { %>
-                    <p><%= error.msg %> </p> 
-                <% }) %>
-            <% } %>
-        </section>          
+                
         <!--FORMULARIO DE REGISTRO DE USUARIO-->
         <form action="/user/registro/" method="POST" class="form-register" id="form-register" enctype="multipart/form-data">
             <h1 class="login">REGISTRO</h1>
@@ -30,7 +24,14 @@
                     <label for="nombre" class="lbl-text">Nombre</label>
                     <p class="formularioInputError">Ingrese su nombre. No ingrese numeros o caracteres especiales.</p>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
-                    
+                    <section class="errores">
+                        <% if(locals.errors &&errors.nombre ) {%>
+                                  
+                            <p><%= errors.nombre.msg %></p> 
+                          
+                        <% } %>
+        
+                    </section>  
                 </div>
 
                 <!-- APELLIDO -->
@@ -39,6 +40,14 @@
                     <label for="apellido" class="lbl-text">Apellido</label>
                     <p class="formularioInputError">Ingrese su apellido. No ingrese numeros o caracteres especiales.</p>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.apellido ) {%>
+                                  
+                            <p><%= errors.apellido.msg %></p> 
+                          
+                        <% } %>
+        
+                    </section> 
                 </div>
 
                 <!-- DIRECCION -->
@@ -47,18 +56,41 @@
                     <label for="direccion" class="lbl-text">Direccion</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese su dirección.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.direccion) {%>
+                                  
+                            <p><%= errors.direccion.msg %></p> 
+                          
+                        <% } %>
+        
+                    </section> 
                 </div>
                 <div class="group-register" id="grupo-localidad">
                     <input type="text" class="input-text" id="localidad" name="localidad"><span class="barra"></span>
                     <label for="localidad" class="lbl-text">Localidad</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese la localidad.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.localidad) {%>
+                                  
+                            <p><%= errors.localidad.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
+                    
                 </div>
                 <div class="group-register" id="grupo-pais">
                     <input type="text" class="input-text" id="pais" name="pais"><span class="barra"></span>
                     <label for="pais" class="lbl-text">Pais</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese el País.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.pais) {%>
+                                  
+                            <p><%= errors.pais.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
 
                 <!-- EDAD -->
@@ -67,6 +99,13 @@
                     <label for="edad" class="lbl-text">Edad</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese su edad.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.edad) {%>
+                                  
+                            <p><%= errors.edad.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
 
                 <!-- CORREO ELECTRONICO -->
@@ -75,6 +114,13 @@
                     <label for="mail" class="lbl-text">Correo Electronico</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese un correo electrónico valido.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.email) {%>
+                                  
+                            <p><%= errors.email.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
 
                 <!-- USUARIO -->
@@ -83,6 +129,13 @@
                     <label for="usuario" class="lbl-text">Nombre de Usuario</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese un nombre de usuario entre 8 y 20 caracteres.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.usuario) {%>
+                                  
+                            <p><%= errors.usuario.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
 
                 <!-- TIPO DE USUARIO -->
@@ -92,6 +145,13 @@
                         <option value="administrador">Administrador</option>
                         <option value="cliente">Cliente</option>
                     </select>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.tipoUsuario) {%>
+                                  
+                            <p><%= errors.tipoUsuario.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
 
                 <!-- CONTRASENA -->
@@ -100,6 +160,13 @@
                     <label for="contrasenia" class="lbl-text">Contraseña</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese una contraseña entre 8 y 20 dígitos.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.contrasenia) {%>
+                                  
+                            <p><%= errors.contrasenia.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
 
                 <!-- CONFIRMAR CONTRASENA -->
@@ -108,6 +175,13 @@
                     <label for="repetirContrasenia" class="lbl-text">Repetir Contraseña</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ambas contraseñas deben ser iguales.</p>
+                    <section class="errores">
+                        <% if(locals.errors &&errors.repetirContrasenia) {%>
+                                  
+                            <p><%= errors.repetirContrasenia.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
 
                 <div class="formularioMensaje" id="formularioMensaje">
@@ -115,6 +189,13 @@
                 </div>
                 <div class="group-register" id="cargar-imagen">
                     <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="img">
+                    <section class="errores">
+                        <% if(locals.errors &&errors.img) {%>
+                                  
+                            <p><%= errors.img.msg %></p> 
+                          
+                        <% } %>
+                    </section> 
                 </div>
             </div>
                 <button type="submit">Registrarse</button>

@@ -387,7 +387,10 @@ i.formularioValidacionEstado {
 .group-register-incorrect input.input-text {
     border-bottom: 1px solid #bb2929;
 }
+.errores{
 
+    color:red
+}
 /*================================ MEDIA QUERIS =====================================*/
 /*============================== MEDIA TABLET =================================*/
 @media (min-width: 760px) {
