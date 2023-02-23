@@ -20,15 +20,15 @@
             <div class="div-form-register">
                 <!-- NOMBRE -->
                 <div class="group-register" id="grupo-nombre">
-                    <input type="text" class="input-text" id="nombre" name="nombre"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="nombre" name="nombre"><span class="barra"></span>
                     <label for="nombre" class="lbl-text">Nombre</label>
                     <p class="formularioInputError">Ingrese su nombre. No ingrese numeros o caracteres especiales.</p>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <section class="errores">
                         <% if(locals.errors &&errors.nombre ) {%>
-                                  
+                        
                             <p><%= errors.nombre.msg %></p> 
-                          
+                        
                         <% } %>
         
                     </section>  
@@ -36,15 +36,15 @@
 
                 <!-- APELLIDO -->
                 <div class="group-register" id="grupo-apellido">
-                    <input type="text" class="input-text" id="apellido" name="apellido"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="apellido" name="apellido"><span class="barra"></span>
                     <label for="apellido" class="lbl-text">Apellido</label>
                     <p class="formularioInputError">Ingrese su apellido. No ingrese numeros o caracteres especiales.</p>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <section class="errores">
                         <% if(locals.errors &&errors.apellido ) {%>
-                                  
+                            
                             <p><%= errors.apellido.msg %></p> 
-                          
+                            
                         <% } %>
         
                     </section> 
@@ -52,88 +52,88 @@
 
                 <!-- DIRECCION -->
                 <div class="group-register" id="grupo-direccion">
-                    <input type="text" class="input-text" id="direccion" name="direccion" ><span class="barra"></span>
+                    <input required type="text" class="input-text" id="direccion" name="direccion" ><span class="barra"></span>
                     <label for="direccion" class="lbl-text">Direccion</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese su dirección.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.direccion) {%>
-                                  
+                            
                             <p><%= errors.direccion.msg %></p> 
-                          
+                            
                         <% } %>
         
                     </section> 
                 </div>
                 <div class="group-register" id="grupo-localidad">
-                    <input type="text" class="input-text" id="localidad" name="localidad"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="localidad" name="localidad"><span class="barra"></span>
                     <label for="localidad" class="lbl-text">Localidad</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese la localidad.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.localidad) {%>
-                                  
+                            
                             <p><%= errors.localidad.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                     
                 </div>
                 <div class="group-register" id="grupo-pais">
-                    <input type="text" class="input-text" id="pais" name="pais"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="pais" name="pais"><span class="barra"></span>
                     <label for="pais" class="lbl-text">Pais</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese el País.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.pais) {%>
-                                  
+                            
                             <p><%= errors.pais.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
 
                 <!-- EDAD -->
                 <div class="group-register" id="grupo-edad">
-                    <input type="number" class="input-text" id="edad" name="edad"><span class="barra"></span>
+                    <input required type="number" class="input-text" id="edad" name="edad"><span class="barra"></span>
                     <label for="edad" class="lbl-text">Edad</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese su edad.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.edad) {%>
-                                  
+                            
                             <p><%= errors.edad.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
 
                 <!-- CORREO ELECTRONICO -->
                 <div class="group-register" id="grupo-email">
-                    <input type="email" class="input-text" id="mail" name="email"><span class="barra"></span>
+                    <input required type="email" class="input-text" id="mail" name="email"><span class="barra"></span>
                     <label for="mail" class="lbl-text">Correo Electronico</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese un correo electrónico valido.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.email) {%>
-                                  
+                            
                             <p><%= errors.email.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
 
                 <!-- USUARIO -->
                 <div class="group-register" id="grupo-usuario">
-                    <input type="text" class="input-text" id="usuario" name="usuario"><span class="barra"></span>
+                    <input required type="text" class="input-text" id="usuario" name="usuario"><span class="barra"></span>
                     <label for="usuario" class="lbl-text">Nombre de Usuario</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese un nombre de usuario entre 8 y 20 caracteres.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.usuario) {%>
-                                  
+                            
                             <p><%= errors.usuario.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
@@ -148,39 +148,39 @@
                     </select>
                     <section class="errores">
                         <% if(locals.errors &&errors.tipoUsuario) {%>
-                                  
+                            
                             <p><%= errors.tipoUsuario.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
 
                 <!-- CONTRASENA -->
-                <div class="group-register" id="9">
+                <div class="group-register" id="grupo-contrasenia">
                     <input required type="password" class="input-text" id="contrasenia" name="contrasenia"><span class="barra"></span>
                     <label for="contrasenia" class="lbl-text">Contraseña</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ingrese una contraseña entre 8 y 20 dígitos.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.contrasenia) {%>
-                                  
+                            
                             <p><%= errors.contrasenia.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
 
                 <!-- CONFIRMAR CONTRASENA -->
-                <div class="group-register" id="grupo-repetirContraseña">
-                    <input type="password" class="input-text" id="repetirContrasenia" name="repetirContrasenia"><span class="barra"></span>
+                <div class="group-register" id="grupo-repetirContrasenia">
+                    <input required type="password" class="input-text" id="repetirContrasenia" name="repetirContrasenia"><span class="barra"></span>
                     <label for="repetirContrasenia" class="lbl-text">Repetir Contraseña</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                     <p class="formularioInputError">Ambas contraseñas deben ser iguales.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.repetirContrasenia) {%>
-                                  
+                            
                             <p><%= errors.repetirContrasenia.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
@@ -192,9 +192,9 @@
                     <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="img">
                     <section class="errores">
                         <% if(locals.errors &&errors.img) {%>
-                                  
+                            
                             <p><%= errors.img.msg %></p> 
-                          
+                            
                         <% } %>
                     </section> 
                 </div>
