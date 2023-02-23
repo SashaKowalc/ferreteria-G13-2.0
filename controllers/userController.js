@@ -94,7 +94,7 @@ const usersController = {
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
           }
          
-          res.render("home", { user });
+          res.redirect("/");
         } else {
           res.render("login", {
             errors: {

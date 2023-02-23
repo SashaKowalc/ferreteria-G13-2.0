@@ -57,7 +57,7 @@
                     </form>
                 </div>
            
-                <% if (locals.isLogged) { %>
+                <% if (locals.isLogged && locals.userLogged.tipo_usuario==1) { %>
                    
                     <a href="/productos/editar/<%= producto.producto_id %> " class="boton_personalizado" class="action-button edit">Editar Producto</a>
                     <form action="/productos/delete/<%=producto.producto_id%>?_method=DELETE" method="POST" >
