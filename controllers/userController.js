@@ -180,7 +180,7 @@ const usersController = {
       where: { usuario_id: req.params.id },
     })
       .then(function (user) {
-        res.redirect("/")})
+        res.render("home", {user})})
       .catch((error) => console.log(error));
   },
   editar: (req, res) => {
