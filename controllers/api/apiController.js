@@ -12,11 +12,11 @@ const apiController = {
         .then(usuarios => {
             let respuesta = {
                 count: usuarios.length,
-                usuarios:{
-                name:usuarios.map(usuario=>("id : "+usuario.usuario_id+",name : "+usuario.nombre +","+ "email : "+usuario.email+"detail: http://localhost:3030/api/users/:"+usuario.usuario_id)),
+                
+                users:usuarios.map(usuario=>("id : "+usuario.usuario_id+",name : "+usuario.nombre +","+ "email : "+usuario.email+", detail: http://localhost:3030/api/users/:"+usuario.usuario_id)),
                
             }
-                }
+                
             
                 res.json(respuesta);
             
