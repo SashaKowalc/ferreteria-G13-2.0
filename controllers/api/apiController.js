@@ -12,17 +12,25 @@ const apiController = {
         .then(usuarios => {
             let respuesta = {
                 count: usuarios.length,
-                meta:{
-                    status:200,
-                    detail:"/api/users"
-                },
-                data:{
-                    usuarios
-                    
-                } 
-        }
-        res.json(respuesta);
+                usuarios:{
+                name:usuarios.map(usuario=>("id : "+usuario.usuario_id+",name : "+usuario.nombre +","+ "email : "+usuario.email+"detail: http://localhost:3030/api/users/:"+usuario.usuario_id)),
+               
+            }
+                }
+            
+                res.json(respuesta);
+            
             })
-    },
-}
+                
+        
+                
+
+                 
+            
+                 
+        }
+    }
+            
+    
+
 module.exports = apiController;
