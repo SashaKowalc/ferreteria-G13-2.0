@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const apiController=require('../../controllers/api/apiController')
+const apiUsuariosController=require('../../controllers/api/apiUsuariosController')
 
-router.get('/users',apiController.total);
-
+router.get('/users',apiUsuariosController.total);
+router.get('/users',apiUsuariosController.total);
 
 
 

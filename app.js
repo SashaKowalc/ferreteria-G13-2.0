@@ -7,7 +7,8 @@ const methodOverride =  require('method-override');
 const cookies = require('cookie-parser');
 const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-const usuariosAPI=require('./routes/api/usuariosApi')
+const usuariosApi=require('./routes/api/usuariosApi')
+const productosApi=require('./routes/api/productosApi')
 let PORT = 3030;
 
 //--------------------  APP LISTEN ------------------------//
@@ -40,7 +41,8 @@ app.set( __dirname + "/views/partials");
 app.use('/', mainRouter);
 app.use("/productos", productsRouter);
 app.use("/user", usersRouter);
-app.use("/api",usuariosAPI);
+app.use("/api",usuariosApi);
+app.use("/api",productosApi);
 //-------------------NOT FOUND-----------------------------------//
 app.get("/*", (req, res) => {
     res.status(404).send("404 NOT FOUND");
