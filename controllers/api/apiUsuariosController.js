@@ -15,7 +15,7 @@ const apiUsuariosController = {
                 users:usuarios.map(usuario=>({"id":usuario.usuario_id,
                 "name":usuario.nombre, 
                 "email" : usuario.email, 
-                "detail": "http://localhost:3030/api/users/:"+usuario.usuario_id})),
+                "detail": "http://localhost:3030/api/users/"+usuario.usuario_id})),
             }
               res.json({respuesta});
             
