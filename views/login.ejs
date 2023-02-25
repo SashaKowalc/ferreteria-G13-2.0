@@ -18,9 +18,11 @@
             <h1 class="login">INICIAR SESION</h1>
             <div class="div-form-login">
                 <!-- USUARIO -->
-                <div class="group-register" id="login1">
+                <div class="group-register" id="grupo-email">
                         <input required type="text" class="input-text" id="usuario"  name ="email"><span class="barra"></span>
                         <label for="usuario" class="lbl-text">Correo electronico</label>
+                        <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
+                        <p class="formularioInputError">Ingrese un mail valido.</p>
                         <div class="error">
                             <% if(locals.errors &&errors.email ) {%>
                               
@@ -28,34 +30,44 @@
                               
                             <% } %>
                         </div>
-                        <div class="error2">
-                            <% if(locals.errors &&errors.password ) {%>
-                              
-                             <p>¡¡¡¡<%= errors.password.msg %>!!!!</p> 
+                    </div>
+                    
+                    <!-- CONTRASENA -->
+                    <div class="group-register" id="grupo-contrasenia">
+                        <input required type="password" class="input-text" id="contrasenia" name="contrasenia"><span class="barra"></span>
+                        <label for="contrasenia" class="lbl-text">Contraseña</label>
+                        <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
+                        <p class="formularioInputError">Ingrese su contraseña.</p>
+                    </div>
+                    
+                    <div class="formularioMensaje" id="formularioMensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                    </div>
+                    
+                    <div class="error2">
+                        <% if(locals.errors &&errors.password ) {%>
                           
-                            <% } %>
-                        </div>
-                </div>
-
-                <!-- CONTRASENA -->
-                <div class="group-register" id="login2">
-                        <input required type="password" class="input-text" id="contraseña" name="contraseña"><span class="barra"></span>
-                        <label for="contraseña" class="lbl-text">Contraseña</label>
-                </div>
-
-                <button type="submit" class="corrido">Iniciar Sesion</button>
-                <p class="login"><a href="/user/registro">¿No estas registrado? Crea tu cuenta acá!</a></p>
+                         <p><%= errors.password.msg %></p> 
+                      
+                        <% } %>
+                    </div>
+                    
+                    <button type="submit" class="corrido">Iniciar Sesion</button>
+                    <p class="login"><a href="/user/registro">¿No estas registrado? Crea tu cuenta acá!</a></p>
                 </div>
             </div>
-                <div >
-                    <label >
-                        <input type="checkbox"  name="remember_user">Recordar mi usuario
-                    </label>
-                </div>
+            <div >
+                <label >
+                    <input type="checkbox"  name="remember_user">Recordar mi usuario
+                </label>
+            </div>
+            
+            
             
         </form>
-
+        
         
     </main>
+    <script src="/validations/login-front.js"></script>
 <!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
 <%- include('./partials/footer.ejs')  %> 

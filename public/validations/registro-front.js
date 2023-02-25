@@ -7,7 +7,6 @@
         direccion: /^[a-zA-ZÀ-ÿ-Z0-9\s]{2,40}$/, // Letras, numeros y espacios, pueden llevar acentos.
         localidad: /^[a-zA-ZÀ-ÿ-Z0-9\s]{2,40}$/, // Letras, numeros y espacios, pueden llevar acentos.
         pais: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
-        edad: /^[0-9]{1,2}$/, // La edad es válida entre 1-120.
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         usuario: /^[a-zA-Z0-9\_\-]{8,20}$/, // Letras, numeros, guion y guion_bajo.
         contrasenia: /^.{8,20}$/, // 8 a 20 digitos.
@@ -43,7 +42,6 @@
                 validarInput(expresiones.pais, e.target, 'pais');
             break;
             case 'edad':
-                validarInput(expresiones.edad, e.target, 'edad');
                 validarEdad(e.target, 'edad');
             break;
             case 'email':
@@ -103,7 +101,7 @@
     }
 
     const validarEdad = (input, inputId) => {
-        if(input.value >= 18){
+        if(input.value >= 18 && input.value <= 99){
             document.getElementById(`grupo-${inputId}`).classList.remove('group-register-incorrect');
             document.getElementById(`grupo-${inputId}`).classList.add('group-register-correct');
             document.querySelector(`#grupo-${inputId} i`).classList.add('fa-circle-check');

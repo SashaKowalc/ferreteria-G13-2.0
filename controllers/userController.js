@@ -109,7 +109,7 @@ const usersController = {
         res.render("login", {
           errors: {
             password: {
-              msg: "contraseña invalida",
+              msg: "Email o contraseña no validos.",
             }
           }
         })

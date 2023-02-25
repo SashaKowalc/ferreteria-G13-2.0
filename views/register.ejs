@@ -98,7 +98,7 @@
                     <input required type="number" class="input-text" id="edad" name="edad"><span class="barra"></span>
                     <label for="edad" class="lbl-text">Edad</label>
                     <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
-                    <p class="formularioInputError">Ingrese su edad.</p>
+                    <p class="formularioInputError">Ingrese su edad. Debe ser mayor de 18 años.</p>
                     <section class="errores">
                         <% if(locals.errors &&errors.edad) {%>
                             
@@ -185,9 +185,6 @@
                     </section> 
                 </div>
 
-                <div class="formularioMensaje" id="formularioMensaje">
-                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                </div>
                 <div class="group-register" id="cargar-imagen">
                     <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="img">
                     <section class="errores">
@@ -198,11 +195,16 @@
                         <% } %>
                     </section> 
                 </div>
+
+                <div class="formularioMensaje" id="formularioMensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                </div>
+                
             </div>
                 <button type="submit">Registrarse</button>
                 <p class="login"><a href="/login">¿Ya estás registrado? Inicia sesión acá!</a></p>
         </form>
     </main>
-    <!-- <script src="/validations/registro-front.js"></script> -->
+    <script src="/validations/registro-front.js"></script>
 <!-- SUSCRIPCION + FOOTER + COPIRIGHT-->
 <%- include('./partials/footer.ejs')  %>
