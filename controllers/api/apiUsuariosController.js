@@ -6,7 +6,7 @@ const { Op } = require("sequelize");
 const moment = require('moment');
 
 
-const apiController = {
+const apiUsuariosController = {
     total: (req, res) => {
         db.Usuarios.findAll()
         .then(usuarios => {
@@ -43,13 +43,9 @@ const apiController = {
                 res.json(respuesta);
             })
 
-
-
-
-
         }
     }
             
     
     
-module.exports = apiController;
+module.exports = apiUsuariosController;
