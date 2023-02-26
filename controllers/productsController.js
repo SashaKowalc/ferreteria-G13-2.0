@@ -18,6 +18,15 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
   // LISTA DE PRODUCTOS POR CATEGORIA
+  mostrarCategoria:function(req,res) {
+  db.Categorias.findAll().
+  then(function(categoria){
+    res.render("home",{categoria});
+  })
+  
+  
+  },
+
   categoria: (req, res) => {
     //FILTRA PRODUCTOS A MOSTRAR EN CADA CATEGORIA
     let listaProductos = db.Categorias.findOne({where: {nombre: req.params.categoria}})
@@ -229,8 +238,8 @@ const productsController = {
             })
           })
         })
-        .then( () =>{
-          res.redirect(`/productos/mostrar`);
+        .then( (producto) =>{
+          res.render('home',{producto});
         })
         .catch((error) => console.log(error));
 
