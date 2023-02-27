@@ -23,48 +23,50 @@
             <h1 class="form-edit">Crear nuevo producto </h1>
             <div class="div-form-register">
                 <!--NOMBRE DEL PRODUCTO-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="nombre" name="nombre"><span class="barra"></span>
+                <div class="group-register" id="grupo-nombre">
+                    <input required type="text" class="input-text" id="nombre" name="nombre"><span class="barra"></span>
                     <label for="nombre" class="lbl-text">Nombre del producto</label>
+                    <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
+                    <p class="formularioInputError">Ingrese un nombre, mínimo 5 digitos</p>
                 </div>
                 <!--MARCA-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="marca" name="marca"><span class="barra"></span>
+                <div class="group-register" id="grupo-marca">
+                    <input required type="text" class="input-text" id="marca" name="marca"><span class="barra"></span>
                     <label for="marca" class="lbl-text">Marca</label>
                 </div>
                 <!--TAMAÑO-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="tamaño" name="tamanio"><span class="barra"></span>
+                <div class="group-register" id="grupo-tamaño">
+                    <input required type="text" class="input-text" id="tamaño" name="tamanio"><span class="barra"></span>
                     <label for="tamaño" class="lbl-text">Tamaño</label>
                 </div>
                 <!--COLOR-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="color" name="color"><span class="barra"></span>
+                <div class="group-register" id="grupo-color">
+                    <input required type="text" class="input-text" id="color" name="color"><span class="barra"></span>
                     <label for="color" class="lbl-text">Color</label>
                 </div>
                 <!--PRECIO-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="precio" name="precio"><span class="barra"></span>
+                <div class="group-register" id="grupo-precio">
+                    <input required type="text" class="input-text" id="precio" name="precio"><span class="barra"></span>
                     <label for="precio" class="lbl-text">Precio</label>
                 </div>
                 <!--FABRICANTE-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="fabricante" name="fabricante"><span class="barra"></span>
+                <div class="group-register" id="grupo-fabricante">
+                    <input required type="text" class="input-text" id="fabricante" name="fabricante"><span class="barra"></span>
                     <label for="fabricante" class="lbl-text">Fabricante</label>
                 </div>
                 <!--DESCUENTO-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="descuento" name="descuento"><span class="barra"></span>
+                <div class="group-register" id="grupo-descuento">
+                    <input required type="text" class="input-text" id="descuento" name="descuento"><span class="barra"></span>
                     <label for="descuento" class="lbl-text">Descuento</label>
                 </div>
                 <!--MODELO-->
-                <div class="group-register">
-                    <input type="text" class="input-text" id="modelo" name="modelo"><span class="barra"></span>
+                <div class="group-register" id="grupo-modelo">
+                    <input required type="text" class="input-text" id="modelo" name="modelo"><span class="barra"></span>
                     <label for="modelo" class="lbl-text">Modelo</label>
                 </div>
                 <!--STOCK-->
-                <div class="group-register">
-                    <input type="number" class="input-text" id="stock" name="stock"><span class="barra"></span>
+                <div class="group-register" id="grupo-stock">
+                    <input required type="number" class="input-text" id="stock" name="stock"><span class="barra"></span>
                     <label for="stock" class="lbl-text">Stock</label>
                 </div>
                 <!--CATEGORIA-->
@@ -81,9 +83,10 @@
                     <input type="file" accept="image/png,image/jpeg" class="input-img" id="foto" name="img">
                 </div>
                 <!--DESCRIPCION-->
-                <div class="group-register" id="descripcion">
+                <div class="group-register" id="grupo-descripcion">
                     <label for="descripcion" class="descripcion">Descripción</label><br>
-                    <textarea class="descripcion" name="descripcion" id="descripcion" cols="30" rows="6"></textarea>
+                    <textarea class="input-text" name="descripcion" id="descripcion" cols="30" rows="6"></textarea>
+                    <p class="formularioInputError">Ingrese una descripción valida. Mínimo 20 digitos.</p>
                 </div>
                 <!--SUBMIT / RESET-->
                 <button type="submit">Crear</a></button>
@@ -91,5 +94,6 @@
             </div>
         </form>
     </main>
+    <script src="/validations/crearProducto.js"></script>
 </body>
 <%- include('./partials/footer.ejs')  %>  
