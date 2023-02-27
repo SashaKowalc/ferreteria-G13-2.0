@@ -26,7 +26,7 @@ const apiProductosController = {
                 "descripcion":producto.descripcion,
                 //aca puse en el array la relacion de muchos  a muchos
                 "array":[producto.categorias],
-                "detail":"http://localhost:3030/api/productos/api/products/:"+producto.producto_id
+                "detail":"http://localhost:3030/api/products/:"+producto.producto_id
             }))
              
              }
