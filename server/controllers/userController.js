@@ -30,15 +30,11 @@ const usersController = {
 
   //NUEVO USUARIO
   registrar: (req, res) => {
-    const resultValidation = validationResult(req);
+    let errors = validationResult (req);
+      console.log("----------------------------------"+validationResult(req));
 
-		if (resultValidation.errors.length > 0) {
-			return res.render('register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		
-    }
+      if (errors.isEmpty()){
+        console.log("DATOS CORRECTOS")
         let img;
 
 
@@ -61,18 +57,19 @@ const usersController = {
       contraseña: pass,
       nombre_Usuario: req.body.usuario,
       imagen: img,
-      tipo_usuario: req.body.tipoUsuario
     })
       .then(function (users) {
-  
-          
+        if (users) {
           res.redirect("/");
-        })
-        
+        } else {
+          res.status(400).send("error");
+        }
+      })
       .catch((error) => console.log(error));
-  
+  }  else{
     console.log("Entra por errores")
-    res.render('home', {resultValidation : resultValidation .array(), old: req.body})
+    res.render('register', {errors : errors.array(), old: req.body})
+  }
   },
   processLogin: (req, res) => {
     // let contraseña;
@@ -81,35 +78,36 @@ const usersController = {
 
     // res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
     const errores = validationResult(req);
-  if(!errores.isEmpty()){
-   res.render('login', {errores: errores.array()})
-  }
+  
     db.Usuarios.findOne({
       where: { email: req.body.email },
     }) .then((user) => {
       
-        if (bcrypt.compareSync(req.body.contraseña, user.contraseña)) {
+        if (bcrypt.compareSync(req.body.contrasenia, user.contraseña)) {
           req.session.userLogged= user;
           if (req.body.remember_user) {
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
           }
-         
-          res.redirect("/");
+          if (req.session.userLogged) {
+            res.locals.isLogged = true;
+            res.locals.userLogged = req.session.userLogged;
+          
+          res.redirect ('/');
         } else {
           res.render("login", {
             errors: {
-              email: {
-                msg: "credenciales invalidas",
+              pass: {
+                msg: "La contraseña es incorrecta",
               }
             }
           })
         }
-      })
+  }})
       .catch((err) => {
         res.render("login", {
           errors: {
-            password: {
-              msg: "Email o contraseña no validos.",
+            email: {
+              msg: "Credenciales invalidas",
             }
           }
         })
@@ -124,6 +122,15 @@ const usersController = {
     let usuarioContraseña=bcrypt.compareSync(req.body.contrasenia, userToLogin.contrasenia);
       */
   },
+    /*let contraseña=req.body.contraseña
+    db.Usuarios.findOne(contraseña)
+    .then( console.log("contraseña valida"))
+    .catch(err=>console.log(err));*/
+
+    /* let password=req.body.contraseña
+    let usuarioContraseña=bcrypt.compareSync(req.body.contrasenia, userToLogin.contrasenia);
+      */
+  
   /*
       if(userToLogin) {
         let isOkThePassword = bcrypt.compareSync(req.body.contrasenia, userToLogin.contrasenia);

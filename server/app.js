@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors')
 const app = express();
 const mainRouter = require('./routes/mainRouter')
 const productsRouter= require ("./routes/productsRouter");
@@ -26,7 +27,7 @@ app.use(session({
 app.use(cookies());   
 app.use(userLoggedMiddleware);
 app.use(express.urlencoded({ extended: true }));   
-   
+app.use(cors())
 
 
 

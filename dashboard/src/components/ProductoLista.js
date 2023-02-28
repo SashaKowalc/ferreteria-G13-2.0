@@ -1,24 +1,45 @@
 import React from "react";
 import Producto from "./Producto";
 
-export default class ProductoLista extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { productos: [] };
-    }
+import { useEffect,useState, useRef} from 'react';
 
-    async fetchProductos() {
-        const response = await fetch("http://localhost:3030/api/products");
-        const result = await response.json();
-        this.setState({ Producto: result.data });
-        console.log("--------------------------------"+result);
-    }
+function ProductoLista(){
 
-    componentDidMount() {
-        this.fetchProductos();
-    }
+	
 
-    render() {
+	
+	const [producto,setProducto]=useState([])
+	const [keyword,setKeyword]=useState('')
+	
+	useEffect(()=>{
+		
+		let endPoint=`"http://localhost:3030/api/products`;
+		fetch(endPoint)
+		.then(res=>res.json())
+		.then(data=>{
+			setProducto(data.Search)
+			console.log('data',data)
+		})
+		.catch(err=>console.log(err))
+		
+
+	},[keyword]
+	)
+
+	const input=useRef()
+
+
+	const search = e =>{
+		e.preventDefault();
+		
+		let inputValue=input.current.value
+		console.log(inputValue)
+		setKeyword(inputValue)
+
+
+	}
+	
+    
         return (
             <>
                 {/*<!-- PRODUCTS LIST -->*/}
@@ -38,7 +59,7 @@ export default class ProductoLista extends React.Component {
                             >
                                 <thead>
                                     <tr>
-                                        <th>nombre</th>
+                                        <th>producto.nombre</th>
                                         <th>marca</th>
                                         <th>Calificación</th>
                                         <th>Premios</th>
@@ -58,4 +79,4 @@ export default class ProductoLista extends React.Component {
             </>
         );
     }
-}
+export default ProductoLista
