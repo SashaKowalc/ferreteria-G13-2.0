@@ -4,6 +4,6 @@ const apiController=require('../../controllers/api/apiProductosController')
 
 router.get('/products/', apiController.total)
 
-router.get('/products/:id', apiController.detalleUsuario)
+router.get('/products/:id', apiController.detalleProducto)
 
 module.exports=router

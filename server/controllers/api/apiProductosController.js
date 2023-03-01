@@ -39,7 +39,7 @@ const apiProductosController = {
                 
                }).catch(err=>console.log(err));
     },
-    detalleUsuario:function(req, res){
+    detalleProducto:function(req, res){
         db.Productos.findOne({where:{producto_id:req.params.id}})
         
             .then(producto => {

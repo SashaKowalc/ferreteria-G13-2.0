@@ -1,6 +1,12 @@
-import React from "react";
-import image from "../assets/images/img-logo.png";
-import { Link } from "react-router-dom"
+import React from 'react';
+import image from '../assets/images/logo-DH.png';
+import ContentWrapper from './ContentWrapper';
+import CategoriaInDb from './CategoriaInDb';
+import UltimoproductoenDb from './UltimoproductoenDb';
+import ContentRowProductos from './ContentRowProductos';
+import {Link, Route, Switch} from 'react-router-dom';
+import SearchMovies from './SearchMovies';
+
 
 function SideBar() {
     return (
@@ -57,12 +63,23 @@ function SideBar() {
                     {/* <a className="nav-link" href="/"><i className="fas fa-fw fa-table"></i><span>Tables</span></a> */}
                     <Link className="nav-link" to="/CategoriaInDb"><i className="fas fa-fw fa-table"></i><span>Categorias</span></Link>
                 </li>
-
+                 {/*<!-- Nav Item - Tables -->*/}
+                 <li className="nav-item nav-link">
+                <Link className="nav-link" to="/SearchMovies">
+                        <i className="fas fa-search"></i>
+                        <span>Search </span></Link>
+                </li>
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block" />
             </ul>
             {/*<!-- End of Sidebar -->*/}
-
+            <Switch>
+                
+                <Route path="/SearchMovies">
+                    <SearchMovies />
+                </Route>
+       
+            </Switch>
 
         </React.Fragment>
     );
