@@ -2,8 +2,6 @@ import React from "react";
 import SideBar from "./components/SideBar";
 import ContentWrapper from "./components/ContentWrapper";
 
-
-
 import "./assets/css/app.css";
 
 function App() {
