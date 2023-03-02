@@ -74,7 +74,7 @@
                     <% categorias.forEach(categoria => { %>
                         <div class="categoria">
                             <label for="categoria"><%=categoria.nombre %> </label>
-                            <input type="checkbox" name="categoria" value="<%=categoria.nombre %> ">
+                            <input type="checkbox" name="categoria" id="categoria" value=<%=categoria.nombre %>>
                         </div>
                     <% }) %>
                 </section>
@@ -94,6 +94,6 @@
             </div>
         </form>
     </main>
-    <script src="/validations/crearProducto.js"></script>
+    <!-- <script src="/validations/crearProducto.js"></script> -->
 </body>
 <%- include('./partials/footer.ejs')  %>  
