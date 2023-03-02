@@ -99,7 +99,7 @@
             campos['contrasenia'] = true;
         }
     }
-
+2
     const validarEdad = (input, inputId) => {
         if(input.value >= 18 && input.value <= 99){
             document.getElementById(`grupo-${inputId}`).classList.remove('group-register-incorrect');
