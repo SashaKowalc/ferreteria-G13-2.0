@@ -229,8 +229,10 @@ const productsController = {
 
         db.Productos.create(producto)
 
+
         .then(product => {
           categoriasId.forEach(e => {
+           
             // CARGA TABLA INTERMEDIA PRODUCTO-CATEGORIA
             db.ProductoCategorias.create({
               producto_fk: product.producto_id,
@@ -239,7 +241,7 @@ const productsController = {
           })
         })
         .then( (producto) =>{
-          res.render('home',{producto});
+          res.redirect('/home');
         })
         .catch((error) => console.log(error));
 

@@ -29,12 +29,7 @@ const apiProductosController = {
                 "detail":"http://localhost:3030/api/products/"+producto.producto_id
             }))
              
-             }
-            
-            
-            
-                
-                
+             }  
                 res.json({respuesta});
                 
                }).catch(err=>console.log(err));
