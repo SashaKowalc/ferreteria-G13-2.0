@@ -227,29 +227,23 @@ INSERT INTO `productos` VALUES 	(1,'Juego Set Herramientas','Forest','74 piezas'
 (15,'funda Pileta','Catnip','3x3m','gris',2000,'Ind. Argentina','cubre piletas',45,2,'/images/img-1678048335943.png','Mantenga su pileta libre de basura'),
 (16,'Pintura','CasaBlanca','20lts','gris',30000,'Ind. Argentina','latex interior ',2,5,'/images/img-1678048561255.png','pintura de altisima calidad de interiores'),
 (17,'Pintura Plavicon','Plavicon','20lts','blanco',28900,'Ind. Argentina','FIbrado ',5,6,'/images/img-1678048766084.png','pintura de altisima calidad '),
-(18,'Lija','Matex','22x20cm','gris',325,'Ind. Argentina','ml12 ',23,4,'/images/img-1678048948100.png','lija  altisima calidad '),
-(19,'Griferia de baño ','Grif','1x1m','cromado',50000,'Ind. Argentina','xl12 ',2,5,'/images/img-1678049756161.png','griferia de altisima calidad'),
-(20,'Ducha Cuadrada ','L.','20cm','cromado',3999,'Ind. Argentina','kl122 ',6,10,'/images/img-1678049416898.png','Flor Ducha Cuadrada 20x20 Acero Inoxidable + Brazo Caño 40cm'),
-(21,'Pala ','stdim','1m','madera',5000,'Ind. Argentina','fr22 ',5,11,'/images/img-1678059943276.png','pala excelente calidad y precio'),
-(22,'Motosierra ','Zieken','45x89cm','verde',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678068986674.png','Sierra  excelente calidad y precio'),
-(23,'Pulverizador Fumigador','Fores','5L','verde',7600,'Ind. Argentina','PP505/1 ',4,10,'/images/img-1678062577640.png','Excelente calidad y precio , para la mejor fumigacion'),
-(24,'Quita Sarro Y Verdín','Merclin','2L','blanco',1878,'Ind. Argentina','nvrt/1 ',3,2,'/images/img-1678121121811.png','Excelente calidad y precio , para la mejor limpieza de su piscina'),
-(25,'Gorra Gorro X50 Natación','asadf','10x10cm','colores',39899,'Ind. Argentina','nvrt/1 ',3,2,'/images/img-1678121521617.png','Excelente calidad y precio x 50 unidades'),
+(18,'Lija','Matex','22x20cm','Gris',325,'Ind. Argentina','ml12 ',23,4,'/images/img-1678048948100.png','Lija  altisima calidad '),
+(19,'Griferia de baño ','Grif','1x1m','cromado',50000,'Ind. Argentina','xl12 ',2,5,'/images/img-1678049756161.png','Griferia de altisima calidad'),
+(20,'Ducha Cuadrada ','L.','20cm','Cromado',3999,'Ind. Argentina','kl122 ',6,10,'/images/img-1678049416898.png','Flor Ducha Cuadrada 20x20 Acero Inoxidable + Brazo Caño 40cm'),
+(21,'Pala ','Stdim','1m','Madera',5000,'Ind. Argentina','fr22 ',5,11,'/images/img-1678059943276.png','Pala excelente calidad y precio'),
+(22,'Motosierra ','Zieken','45x89cm','Verde',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678068986674.png','Sierra  excelente calidad y precio'),
+(23,'Pulverizador Fumigador','Fores','5L','Verde',7600,'Ind. Argentina','PP505/1 ',4,10,'/images/img-1678062577640.png','Excelente calidad y precio , para la mejor fumigacion'),
+(24,'Quita Sarro Y Verdín','Merclin','2L','Blanco',1878,'Ind. Argentina','nvrt/1 ',3,2,'/images/img-1678121121811.png','Excelente calidad y precio , para la mejor limpieza de su piscina'),
+(25,'Gorra Gorro X50 Natación','Asadf','10x10cm','Colores',39899,'Ind. Argentina','nvrt/1 ',3,2,'/images/img-1678121521617.png','Excelente calidad y precio x 50 unidades'),
 (26,'Pintura Para Piletas','Sherwin','10l','Azul',34850,'Ind. Argentina','fra/tn ',5,7,'/images/img-1678121830695.png','Producto: Recubrimiento Especial Piscinas 100% Acrílico ,Terminación: MATE Uso: Exterior'),
 (27,'Sellador Fisuras Piletas','Plavicon','450g','Azul',3485,'Ind. Argentina','err/kn ',45,4,'/images/img-1678122287262.png','Sellador Para Fisuras Piletas Piscinas Plavicon 450g Pintumm'),
 (28,'Saca Hojas ','Bestway','20x20cm','Azul',1999,'Ind. Argentina','58278 ',5,8,'/images/img-1678122448477.png','Saca Hojas Para Piletas Con Bolsa Limpia Piscina Bestway'),
-(29,'Boya Flotante ','Bestway','20cm','blanco',1999,'Ind. Argentina','145',22,10,'/images/img-1678122773427.png','Boya Flotante Para Pastillas Cloro Pileta Spa Bestway'),
-(30,'Rodillo Recargable ','Paint','20cm','azul',556,'Ind. Argentina','698',21,3,'/images/img-1678123430337.png','Rodillo Recargable Paint Roller Sin Costura El Mas Completo'),
-(31,'Pincel Brocha ','El Galgo','18cm','naranja',2000,'Ind. Argentina','698 ',21,3,'/images/img-1678123655817.png','Pincel Brocha N° 30 Mango Plástico Virola 1 El Galgo'),
-(32,'Grifo de cocina','Aqualaf','36cm','cromado',9148,'Ind. Argentina','eerdwe ',18,6,'/images/img-1678124123280.png','Grifo de cocina doble comando Aqualaf AQ7000 19001 cromo'),
-(33,'Grifería de bach',' Arizona','329cm','cromado',15281,'Ind. Argentina','027/99 ',11,2,'/images/img-1678124917891.png','Grifería de bacha FV Arizona Plus 0207/B1P color cromo'),
-(34,'Kit Herramientas',' Express','11pcs','verde',6399,'Ind. Argentina','0569 ',2,5,'/images/img-1678125215642.png','Kit De Jardinería/huerta Set Herramientas Con Maletin 11 Pcs');
-
-
-
-
-
-
+(29,'Boya Flotante ','Bestway','20cm','Blanco',1999,'Ind. Argentina','145',22,10,'/images/img-1678122773427.png','Boya Flotante Para Pastillas Cloro Pileta Spa Bestway'),
+(30,'Rodillo Recargable ','Paint','20cm','Azul',556,'Ind. Argentina','698',21,3,'/images/img-1678123430337.png','Rodillo Recargable Paint Roller Sin Costura El Mas Completo'),
+(31,'Pincel Brocha ','El Galgo','18cm','Naranja',2000,'Ind. Argentina','698 ',21,3,'/images/img-1678123655817.png','Pincel Brocha N° 30 Mango Plástico Virola 1 El Galgo'),
+(32,'Grifo de cocina','Aqualaf','36cm','Cromado',9148,'Ind. Argentina','eerdwe ',18,6,'/images/img-1678124123280.png','Grifo de cocina doble comando Aqualaf AQ7000 19001 cromo'),
+(33,'Grifería de bach',' Arizona','329cm','Cromado',15281,'Ind. Argentina','027/99 ',11,2,'/images/img-1678124917891.png','Grifería de bacha FV Arizona Plus 0207/B1P color cromo'),
+(34,'Kit Herramientas',' Express','11pcs','Verde',6399,'Ind. Argentina','0569 ',2,5,'/images/img-1678125215642.png','Kit De Jardinería/huerta Set Herramientas Con Maletin 11 Pcs');
 
 
 
