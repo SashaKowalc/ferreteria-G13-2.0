@@ -73,6 +73,81 @@ CREATE TABLE `ferreteria`.`productos` (
   `imagen` VARCHAR(100) NOT NULL,
   `descripcion` VARCHAR(300) NULL,
   PRIMARY KEY (`producto_id`));
+CREATE DATABASE  IF NOT EXISTS `ferreteria`;
+USE `ferreteria`;
+
+DROP TABLE IF EXISTS `ferreteria`.`producto_categoria`;
+DROP TABLE IF EXISTS `ferreteria`.`categorias`;
+DROP TABLE IF EXISTS `ferreteria`.`carritos`;
+DROP TABLE IF EXISTS `ferreteria`.`detalle_venta`;
+DROP TABLE IF EXISTS `ferreteria`.`productos`;
+DROP TABLE IF EXISTS `ferreteria`.`ventas`;
+DROP TABLE IF EXISTS `ferreteria`.`usuarios`;
+DROP TABLE IF EXISTS `ferreteria`.`categoria_usuario`;
+
+
+CREATE TABLE `ferreteria`.`categorias` (
+  `categoria_id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`categoria_id`));
+
+
+
+CREATE TABLE `ferreteria`.`categoria_usuario` (
+  `categoria_usuario_id` INT NOT NULL,
+  `nombre` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`categoria_usuario_id`));
+
+
+
+CREATE TABLE `ferreteria`.`usuarios` (
+  `usuario_id` INT NOT NULL AUTO_INCREMENT,
+  `categoria_id` INT NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `apellido` VARCHAR(45) NOT NULL,
+  `direccion` VARCHAR(200) NOT NULL,
+  `localidad` VARCHAR(45) NOT NULL,
+  `pais` VARCHAR(45) NOT NULL,
+  `edad` INT NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `nombre_usuario` VARCHAR(45) NOT NULL,
+  `contraseña` VARCHAR(100) NOT NULL,
+  `imagen` VARCHAR(45) NULL,
+  `tipo_usuario` int not  NULL,
+  PRIMARY KEY (`usuario_id`));
+
+
+
+
+
+CREATE TABLE `ferreteria`.`ventas` (
+  `venta_id` INT NOT NULL AUTO_INCREMENT,
+  `usuario_id` INT NOT NULL,
+  `total` DECIMAL(2) NOT NULL,
+  PRIMARY KEY (`venta_id`),
+  CONSTRAINT `usuario_id`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `ferreteria`.`usuarios` (`usuario_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+
+CREATE TABLE `ferreteria`.`productos` (
+  `producto_id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(100) NOT NULL,
+  `marca` VARCHAR(45) NOT NULL,
+  `tamanio` VARCHAR(30) NOT NULL,
+  `color` VARCHAR(30) NULL,
+  `precio` DECIMAL NOT NULL,
+  `fabricante` VARCHAR(45) NULL,
+  `modelo` VARCHAR(45) NULL,
+  `stock` INT NULL,
+  `descuento` INT NULL,
+  `imagen` VARCHAR(100) NOT NULL,
+  `descripcion` VARCHAR(300) NULL,
+  PRIMARY KEY (`producto_id`));
 
 
 
@@ -155,8 +230,8 @@ INSERT INTO `productos` VALUES 	(1,'Juego Set Herramientas','Forest','74 piezas'
 (18,'Lija','Matex','220x20cm','gris',325,'Ind. Argentina','ml12 ',23,4,'/images/img-1678048948100.png','lija  altisima calidad '),
 (19,'Griferia de baño ','Grif','1x1m','cromado',50000,'Ind. Argentina','xl12 ',2,5,'/images/img-1678049756161.png','griferia de altisima calidad'),
 (20,'Flor Ducha Cuadrada ','Libercam','20x20cm','cromado',3999,'Ind. Argentina','kl122 ',6,10,'/images/img-1678049416898.png','Flor Ducha Cuadrada 20x20 Acero Inoxidable + Brazo Caño 40cm'),
-(21,'Pala ','stdim','1m','madera',5000,'Ind. Argentina','fr22 ',5,11,'/images/img-1678059943276.png','pala exlente calidad y precio'),
-(22,'Motosierra ','Zieken','45x89cm','verde',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678060020329.png','Sierra  exlente calidad y precio'),
+(21,'Pala ','stdim','1m','madera',5000,'Ind. Argentina','fr22 ',5,11,'/images/img-1678059943276.png','pala exelente calidad y precio'),
+(22,'Motosierra ','Zieken','45x89cm','verde',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678060020329.png','Sierra  exelente calidad y precio'),
 (23,'Pulverizador Fumigador','Forest & Garden','5L','verde',7600,'Ind. Argentina','PP505/1 ',4,10,'/images/img-1678062577640.png','Exelente calidad y precio , para la mejor fumigacion');
 
 
