@@ -157,7 +157,7 @@ INSERT INTO `productos` VALUES 	(1,'Juego Set Herramientas','Forest','74 piezas'
 (20,'Flor Ducha Cuadrada ','Libercam','20x20cm','cromado',3999,'Ind. Argentina','kl122 ',6,10,'/images/img-1678049416898.png','Flor Ducha Cuadrada 20x20 Acero Inoxidable + Brazo Caño 40cm'),
 (21,'Pala ','stdim','1m','madera',5000,'Ind. Argentina','fr22 ',5,11,'/images/img-1678059943276.png','pala exlente calidad y precio'),
 (22,'Motosierra ','Zieken','45x89cm','verde',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678060020329.png','Sierra  exlente calidad y precio'),
-(23,'Pulverizador Fumigador','Forest & Garden','5L','verde',7600,'Ind. Argentina','PP505/1 ',4,10,'/images/img-1678060108522.png','Sierra  exlente calidad y precio , para la mejor fumigacion');
+(23,'Pulverizador Fumigador','Forest & Garden','5L','verde',7600,'Ind. Argentina','PP505/1 ',4,10,'/images/img-1678062577640.png','Exelente calidad y precio , para la mejor fumigacion');
 
 
 
@@ -175,4 +175,3 @@ INSERT INTO `categoria_usuario` VALUES (1,'administrador'), (2,'cliente');
 INSERT INTO `producto_categoria` VALUES (1,1,1), (2,2,2), (3,3,1);
 INSERT INTO `producto_categoria` VALUES (4,4,1), (5,5,1), (6,6,1), (7,7,4), (8,8,1),(9,9,1), (10,10,1),(11,11,1),(12,12,1),(13,13,4),(14,14,4),(15,15,4),(16,16,2),(17,17,2),(18,18,2),(19,19,5),(20,20,5),
 (21,21,3),(22,22,3),(23,23,3);
-
