@@ -156,10 +156,8 @@ INSERT INTO `productos` VALUES 	(1,'Juego Set Herramientas','Forest','74 piezas'
 (19,'Griferia de baño ','Grif','1x1m','cromado',50000,'Ind. Argentina','xl12 ',2,5,'/images/img-1678049756161.png','griferia de altisima calidad'),
 (20,'Flor Ducha Cuadrada ','Libercam','20x20cm','cromado',3999,'Ind. Argentina','kl122 ',6,10,'/images/img-1678049416898.png','Flor Ducha Cuadrada 20x20 Acero Inoxidable + Brazo Caño 40cm'),
 (21,'Pala ','stdim','1m','madera',5000,'Ind. Argentina','fr22 ',5,11,'/images/img-1678059943276.png','pala exlente calidad y precio'),
-(22,'Motosierra ','Zieken','45x89cm','naranja',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678068986674.png','Sierra  exlente calidad y precio'),
+(22,'Motosierra ','Zieken','45x89cm','verde',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678060020329.png','Sierra  exlente calidad y precio'),
 (23,'Pulverizador Fumigador','Forest & Garden','5L','verde',7600,'Ind. Argentina','PP505/1 ',4,10,'/images/img-1678062577640.png','Exelente calidad y precio , para la mejor fumigacion');
-
-
 
 
 

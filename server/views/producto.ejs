@@ -39,14 +39,14 @@
             <div class="pos">
                 <div class="boton">
                   
-                    <a class="boton_personalizado" href="">Comprar Ahora!!</a>
+                    <a class="boton_personalizado4" href="">Comprar Ahora!!</a>
                 </div>
-                <div class="boton">
+                <div >
                     <form action="/carrito/sumar/<%= producto.id %> " method="POST">
-                        <button class="boton_personalizado">Agregar al Carrito <i class="ion-ios-cart-outline"></i>
+                        <button class="boton_personalizado4">Agregar al Carrito <i class="ion-ios-cart-outline"></i>
                     </form>
                 </div>
-                <div class="boton_personalizado2" >
+                <div class="boton_personalizado4" >
                     <form action="#">
                         <label for="lang">Cantidad</label>
                             <select name="cantidad" >
@@ -59,9 +59,9 @@
            
                 <% if (locals.isLogged && locals.userLogged.tipo_usuario==1) { %>
                    
-                    <a href="/productos/editar/<%= producto.producto_id %> " class="boton_personalizado" class="action-button edit">Editar Producto</a>
+                    <a href="/productos/editar/<%= producto.producto_id %> " class="boton_personalizado4" class="action-button edit">Editar Producto</a>
                     <form action="/productos/delete/<%=producto.producto_id%>?_method=DELETE" method="POST" >
-                    <button type="submit"class="boton_personalizado" >Eliminar Producto</button>
+                    <button type="submit"class="boton_personalizado4" >Eliminar Producto</button>
                
                 <% } %>
               
