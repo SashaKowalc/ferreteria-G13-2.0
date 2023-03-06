@@ -234,7 +234,7 @@ INSERT INTO `productos` VALUES 	(1,'Juego Set Herramientas','Forest','74 piezas'
 (22,'Motosierra ','Zieken','45x89cm','Verde',30000,'Ind. Argentina','stv12 ',4,10,'/images/img-1678068986674.png','Sierra  excelente calidad y precio'),
 (23,'Pulverizador Fumigador','Fores','5L','Verde',7600,'Ind. Argentina','PP505/1 ',4,10,'/images/img-1678062577640.png','Excelente calidad y precio , para la mejor fumigacion'),
 (24,'Quita Sarro Y Verdín','Merclin','2L','Blanco',1878,'Ind. Argentina','nvrt/1 ',3,2,'/images/img-1678121121811.png','Excelente calidad y precio , para la mejor limpieza de su piscina'),
-(25,'Gorra Gorro X50 Natación','Asadf','10x10cm','Colores',39899,'Ind. Argentina','nvrt/1 ',3,2,'/images/img-1678121521617.png','Excelente calidad y precio x 50 unidades'),
+(25,'Gorra Natación','Asadf','10x10cm','Colores',39899,'Ind. Argentina','nvrt/1 ',3,2,'/images/img-1678121521617.png','Excelente calidad y precio x 50 unidades'),
 (26,'Pintura Para Piletas','Sherwin','10l','Azul',34850,'Ind. Argentina','fra/tn ',5,7,'/images/img-1678121830695.png','Producto: Recubrimiento Especial Piscinas 100% Acrílico ,Terminación: MATE Uso: Exterior'),
 (27,'Sellador Fisuras Piletas','Plavicon','450g','Azul',3485,'Ind. Argentina','err/kn ',45,4,'/images/img-1678122287262.png','Sellador Para Fisuras Piletas Piscinas Plavicon 450g Pintumm'),
 (28,'Saca Hojas ','Bestway','20x20cm','Azul',1999,'Ind. Argentina','58278 ',5,8,'/images/img-1678122448477.png','Saca Hojas Para Piletas Con Bolsa Limpia Piscina Bestway'),
