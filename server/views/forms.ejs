@@ -27,8 +27,6 @@
                 <div class="group-register" id="grupo-nombre">
                     <input required type="text" class="input-text" id="nombre" name="nombre"><span class="barra"></span>
                     <label for="nombre" class="lbl-text">Nombre del producto</label>
-                    <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
-                    <p class="formularioInputError">Ingrese un nombre, mínimo 5 digitos</p>
                 </div>
                 <!--MARCA-->
                 <div class="group-register" id="grupo-marca">
@@ -87,7 +85,6 @@
                 <div class="group-register" id="grupo-descripcion">
                     <label for="descripcion" class="descripcion">Descripción</label><br>
                     <textarea class="input-text" name="descripcion" id="descripcion" cols="30" rows="6"></textarea>
-                    <p class="formularioInputError">Ingrese una descripción valida. Mínimo 20 digitos.</p>
                 </div>
                 <!--SUBMIT / RESET-->
                 <button type="submit">Crear</a></button>
@@ -96,8 +93,6 @@
         </form>
         <% } else{%>
             <h1>SOLO PUEDE CREAR PRODUCTOS SI ES USUARIO ADMINISTRADOR!!!!</h1>
-
-
         <% } %>
     </main>
     <!-- <script src="/validations/crearProducto.js"></script> -->
