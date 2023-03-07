@@ -111,7 +111,8 @@ section.burger-menu i{
 .logo img{
     border-radius: 100%;
     width: 100%;
-    margin-left: 3px;
+    
+    margin: 35% -29% -14% 10%;
 }
 
 /*========================== BARRA DE BUSQUEDA =======================*/
