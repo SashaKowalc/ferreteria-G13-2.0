@@ -98,7 +98,7 @@ form#form-register {
 }
 
 form.form-register div.group-register {
-    position: relative;
+    position: sticky;
     margin: 24px;
 }
 
@@ -358,6 +358,7 @@ i.formularioValidacionEstado {
     color: #1ed12d;
     opacity: 1;
     top: 5px;
+    
 }
 
 .group-register-incorrect label {

@@ -84,6 +84,7 @@ div#login1, div#login2 {
 form.form-register div.group-register {
     position: relative;
     margin: 45px;
+    position: sticky;
 }
 
 input.input-text {
@@ -328,6 +329,7 @@ p.formularioInputError {
     margin-bottom: 0;
     display: none;
     color: #bb2929;
+    position: sticky;
 }
 
 p.formularioInputError-activo {
