@@ -176,7 +176,7 @@ const productsController = {
             })
           })
 
-          res.render("producto" , {producto} )
+          res.redirect('/'); 
         })
       
     },
