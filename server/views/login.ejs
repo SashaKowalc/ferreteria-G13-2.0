@@ -38,17 +38,17 @@
                         <label for="contrasenia" class="lbl-text">Contraseña</label>
                         <i class="formularioValidacionEstado fa-solid fa-circle-xmark"></i>
                         <p class="formularioInputError">Ingrese su contraseña.</p>
-                        <% if(locals.errors &&errors.password ) {%>
-                          
-                         <p><%= errors.password.msg %></p> 
-                      
-                        <% } %>
                     </div>
                     
                     <div class="formularioMensaje" id="formularioMensaje">
                         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
                     </div>
                     <div class="error2">
+                        <% if(locals.errors &&errors.password ) {%>
+                          
+                         <p><%= errors.password.msg %></p> 
+                      
+                        <% } %>
                     </div>
                     
                     <button type="submit" class="corrido">Iniciar Sesion</button>
