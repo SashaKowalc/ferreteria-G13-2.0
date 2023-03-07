@@ -94,7 +94,7 @@ const usersController = {
           if (req.session.userLogged) {
             res.locals.isLogged = true;
             res.locals.userLogged = req.session.userLogged;
-          
+          }
           res.redirect ('/');
         } else {
           res.render("login", {
@@ -105,7 +105,7 @@ const usersController = {
             }
           })
         }
-  }})
+  })
       .catch((err) => {
         res.render("login", {
           errors: {
