@@ -65,7 +65,7 @@
                     <% categoriasEdit.forEach(categoria => { %>
                         <div class="categoria">
                             <label for="categoria"><%=categoria.nombre %> </label>
-                            <input type="checkbox" name="categoria" value=<%=categoria.categoria_id%> 
+                            <input type="checkbox" name="categoria" value=<%=categoria.id%> 
                             <% if (categoria.estado) { %>
                                 checked
                             <% } %> >
