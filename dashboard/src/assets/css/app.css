@@ -343,7 +343,7 @@ h6 {
     margin-bottom: 0.5rem;
     font-weight: 400;
     line-height: 1.2;
-    color:black !important;
+    color:#e3e6f0 !important;
 }
 .h1,
 h1 {
@@ -6759,6 +6759,9 @@ button.bg-dark:hover {
 .mb-0,
 .my-0 {
     margin-bottom: 0 !important;
+    border-radius: 8px;
+    font-size: 33px;
+    font-family: fantasy;
 }
 .ml-0,
 .mx-0 {
@@ -8567,7 +8570,7 @@ button.bg-dark:hover {
     color: #fff !important;
 }
 .text-primary {
-    color: #4e73df !important;
+    color:  #df4e4e !important;
 }
 a.text-primary:focus,
 a.text-primary:hover {
@@ -8848,7 +8851,7 @@ a:focus {
 }
 .bg-gradient-secondary {
     background-color: #858796;
-    background-image: linear-gradient(180deg, #858796 10%, #60616f 100%);
+    background-image: linear-gradient(180deg, #5f6176 10%, #60616f 100%);
     background-size: cover;
 }
 .bg-gradient-success {
@@ -8939,7 +8942,7 @@ a:focus {
     color: #6e707e !important;
 }
 .text-gray-800 {
-    color: #eaecf4 !important;
+    color: black !important;
 }
 .text-gray-900 {
     color: black !important;
