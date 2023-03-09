@@ -4,14 +4,14 @@ import { useEffect, useState} from 'react'
 
 function LastProductDb(){
 
-    const [product, setProduct] = useState([null])
+    const [producto, setProducto] = useState([true])
 	
 	useEffect(()=>{
 		let endPoint = `http://localhost:3030/api/lastProduct`
 		fetch(endPoint)
 		.then((res)=>res.json())
-		.then((data) => {
-				setProduct(data.data);
+		.then((respuesta) => {
+				setProducto(respuesta.data);
                
 			})
 		.catch(err => console.log(err))
@@ -25,12 +25,12 @@ function LastProductDb(){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={product.imagen} style={{width: 40 +'rem'}} alt=" product "/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={producto.imagen} style={{width: 40 +'rem'}} alt=" product "/>
                     </div>
                     <div>
-                    <h2>{product.nombre}</h2>
-                    <p>{product.descripcion}</p>
-                    <h3 className=''>$ {product.precio}</h3>
+                    <h2>{producto.nombre}</h2>
+                    <p>{producto.descripcion}</p>
+                    <h3 className=''>$ {producto.precio}</h3>
                     <a className="btn btn-danger" target="_blank" rel="nofollow" href='/'>View product detail</a>
                 </div>
                 </div>

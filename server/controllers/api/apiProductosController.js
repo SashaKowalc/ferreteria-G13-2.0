@@ -37,31 +37,81 @@ const apiProductosController = {
     detalleProducto:function(req, res){
         db.Productos.findOne({where:{producto_id:req.params.id}})
         
-            .then(producto => {
-                let respuesta={
-                    producto:{
-                   "producto id " :producto.producto_id,
-                   "nombre" :producto.nombre,
-                    "marca" :producto.marca,
-                    "tamanio":producto.tamanio,
-                    "color":producto.color,
-                    "precio":producto.precio,
-                    "fabricante:":producto.fabricante,
-                    "modelo":producto.modelo,
-                    "stock": producto.stock,
-                    "descuento":producto.descuento,
-                    "imagen":"http://localhost:3030/"+producto.imagen,
-                    //no SABRIA que poner las relaciones son uno a uno o muchos a muchos
-                   // "array":[]
-                    }
-                
+        .then(producto => {
+            let respuesta={
+                producto:{
+               "producto id " :producto.producto_id,
+               "nombre" :producto.nombre,
+                "marca" :producto.marca,
+                "tamanio":producto.tamanio,
+                "color":producto.color,
+                "precio":producto.precio,
+                "fabricante:":producto.fabricante,
+                "modelo":producto.modelo,
+                "stock": producto.stock,
+                "descuento":producto.descuento,
+                "imagen":"http://localhost:3030"+producto.imagen,
+                //no SABRIA que poner las relaciones son uno a uno o muchos a muchos
+               // "array":[]
                 }
-                res.json(respuesta);
-            }).catch(err=>console.log(err))
+            
+            }
+            res.json(respuesta);
+        }).catch(err=>console.log(err))
 
 
-    }  
+    } ,
+        lastProduct: (req, res)=>{      
+        db.Productos.findOne ({
+            order: [['producto_id', 'DESC']],
+            limit: 1,
+          
+        
+        })
+        .then(producto => {
+            let respuesta={
+                data:{
+               "producto id " :producto.producto_id,
+               "nombre" :producto.nombre,
+                "marca" :producto.marca,
+                "tamanio":producto.tamanio,
+                "color":producto.color,
+                "precio":producto.precio,
+                "fabricante:":producto.fabricante,
+                "modelo":producto.modelo,
+                "stock": producto.stock,
+                "descuento":producto.descuento,
+                "descripcion":producto.descripcion,
+                "imagen":"http://localhost:3030/"+producto.imagen,
+                //no SABRIA que poner las relaciones son uno a uno o muchos a muchos
+               // "array":[]
+                }
+            
+            }
+         res.json(respuesta);
+        }).catch(err=>console.log(err))
 
+},
+
+listProducts: (req, res) => {
+    db.Productos
+        .findAll()
+        .then(product =>{
+            return res.json({
+                total: product.length,
+                data: product,
+                
+            })
+        })
+},
+
+categorias: (req, res) => {
+    db.Categorias.findAll().then(categorias =>{
+        res.json({
+            total:categorias.length
+        })
+
+    })
 }
-
+}
 module.exports =apiProductosController;

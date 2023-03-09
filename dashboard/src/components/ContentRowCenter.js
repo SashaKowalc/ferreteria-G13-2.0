@@ -1,5 +1,5 @@
 import React from 'react';
-import UltimoproductoenDb from './UltimoproductoenDb';
+import UltimoproductoenDb from './UltimoProductoenDb';
 import CategoriaInDb from './CategoriaInDb';
 
 function ContentRowCenter(){

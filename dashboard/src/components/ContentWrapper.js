@@ -11,16 +11,12 @@ function ContentWrapper() {
             <div id="content">
                 <TopBar />
                 <ContentRowTop />
-                <Switch>
-                    <Route path="/" exact>
-                        <ProductoLista />
+            </div>
+                <div>
+                <ProductoLista />
+                </div>        
                         
-                        
-                    </Route>
-        
-
-                </Switch>
-
+            <div>     
                 
                 <Footer />
             </div>

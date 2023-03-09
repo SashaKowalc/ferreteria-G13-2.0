@@ -1,69 +1,51 @@
 import React from "react";
-import Producto from "./Producto";
-
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState} from 'react'
+import ProductListRow from "./ProductListRow";
 
 function ProductoLista() {
-  const [producto, setProducto] = useState([]);
-  const [keyword, setKeyword] = useState("");
+    const [producto, setProducto] = useState([])
+	
+	useEffect(()=>{
+		let endPoint = `http://localhost:3030/api/listProducts`
+		fetch(endPoint)
+		.then(res=>res.json())
+		.then((data) => {
+				setProducto(data.data);
+			})
+		.catch(err => console.log(err))
+	}, [])
 
-  useEffect(() => {
-    let endPoint = `"http://localhost:3030/api/products`;
-    fetch(endPoint)
-      .then((res) => (res.json()))
-      .then((data) => {
-        console.log("data", data);
-        setProducto(data.Search);
-      })
-      .catch((err) => console.log(err));
-  }, [keyword]);
+    return (
+      
+    <div className="card shadow mb-4">
+      <h2>--TODOS LOS PRODUCTOS EN LA BASE DE DATOS</h2>
+    <div className="card-body">
+        <div className="table-responsive">
+            <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                
+                <thead>
+                  
+                    <tr>
+                        <th>nombre</th>
+                        <th>marca</th>
+                        <th>modelo</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {
+                    producto.map( ( row , i) => {
+                        return <ProductListRow { ...row} key={i}/>
+                    })
+                    }
 
-  const input = useRef();
-
-  const search = (e) => {
-    e.preventDefault();
-    let inputValue = input.current.value;
-    console.log(inputValue);
-    setKeyword(inputValue);
-  };
-
-  return (
-    <>
-      {/*<!-- PRODUCTS LIST -->*/}
-      <h1 className="h3 mb-2 text-gray-800">
-        Todos los producto en la base de datos
-      </h1>
-
-      {/*<!-- DataTales Example -->*/}
-      <div className="card shadow mb-4">
-        <div className="card-body">
-          <div className="table-responsive">
-            <table
-              className="table table-bordered"
-              id="dataTable"
-              width="100%"
-              cellSpacing="0"
-            >
-              <thead>
-                <tr>
-                  <th>producto.nombre</th>
-                  <th>marca</th>
-                  <th>Calificación</th>
-                  <th>Premios</th>
-                  <th>Duración</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {producto.map((m) => {
-                  return <Producto key={m.id} producto={m} />;
-                })}
-              </tbody>
+                </tbody>
             </table>
-          </div>
         </div>
-      </div>
-    </>
+    </div>
+</div>
   );
 }
+
 export default ProductoLista;

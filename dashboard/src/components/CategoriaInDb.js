@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CategoriasMap from "./CategoriasMap";
 
 function CategoriaInDb() {
-  const [categorias, setCategorias] = useState(null);
+  const [categorias, setCategorias] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:3030/api/products")

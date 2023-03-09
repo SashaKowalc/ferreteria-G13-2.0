@@ -1,11 +1,12 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/img-logo.png';
 import ContentWrapper from './ContentWrapper';
 import CategoriaInDb from './CategoriaInDb';
-import UltimoproductoenDb from './UltimoproductoenDb';
+import UltimoProductoenDb from './UltimoProductoenDb';
 import ContentRowProductos from './ContentRowProductos';
+import BusquedaProductos from './BusquedaProductos';
 import {Link, Route, Switch} from 'react-router-dom';
-import SearchMovies from './SearchMovies';
+
 
 
 function SideBar() {
@@ -25,7 +26,7 @@ function SideBar() {
 
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/" exact="true" >
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House" />
+                        <img className="w-100" src={image} alt="ferreteria El Cosito" />
                     </div>
                 </Link>
 
@@ -44,12 +45,12 @@ function SideBar() {
                 <hr className="sidebar-divider" />
  
                 {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
+                <div className="sidebar-heading">MENU</div>
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                     {/* <a className="nav-link collapsed" href="/"><i className="fas fa-fw fa-folder"></i><span>Pages</span></a> */}
-                    <Link className="nav-link collapsed" to="/UltimoproductoenDb" ><i className="fas fa-fw fa-folder"></i><span>Ultimo producto</span></Link>
+                    <Link className="nav-link collapsed" to="/UltimoProductoenDb" ><i className="fas fa-fw fa-folder"></i><span>Ultimo producto</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
@@ -65,21 +66,32 @@ function SideBar() {
                 </li>
                  {/*<!-- Nav Item - Tables -->*/}
                  <li className="nav-item nav-link">
-                <Link className="nav-link" to="/SearchMovies">
-                        <i className="fas fa-search"></i>
-                        <span>Search </span></Link>
+           
                 </li>
                 {/*<!-- Divider -->*/}
-                <hr className="sidebar-divider d-none d-md-block" />
+              
+              
+            
+            
             </ul>
             {/*<!-- End of Sidebar -->*/}
-            <Switch>
-                
-                <Route path="/SearchMovies">
-                    <SearchMovies />
+            {/* <Switch>
+             
+            <Route path="/ContentRowProductos">
+                    <ContentRowProductos />
                 </Route>
-       
-            </Switch>
+                <Route path="/UltimoproductoenDb ">
+                    <UltimoproductoenDb />
+                </Route>
+          
+                <Route path="/CategoriaInDb">
+                    <CategoriaInDb />
+                </Route>
+               
+
+               
+            </Switch> */}
+            
 
         </React.Fragment>
     );

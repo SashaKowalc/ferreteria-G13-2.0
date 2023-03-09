@@ -1,30 +1,68 @@
 import React from "react";
 import SmallCard from "./SmallCard";
+import { useState, useEffect } from 'react';
 
-let productInDataBase = {
-    color: "primary",
-    titulo: "producto en base de datos",
-    valor: 21,
-    icono: "fas fa-film",
-};
+
+function ContentRowTop() {
+
+
+
+    const [categoriasTotal, setCategoriasTotal] = useState(null);
+      
+    useEffect(() => {
+      fetch("http://localhost:3030/api/categorias")
+        .then((res) => res.json())
+        .then((response) => {
+          setCategoriasTotal(response.total);
+        });
+    }, []);
+
+    const [usuarios, setUsuarios] = useState(null);
+      
+    useEffect(() => {
+      fetch("http://localhost:3030/api/users")
+        .then((res) => res.json())
+        .then((response) => {
+          setUsuarios(response.respuesta.count);
+        });
+    }, []);
+
+
+        const [categorias, setCategorias] = useState(null);
+      
+        useEffect(() => {
+          fetch("http://localhost:3030/api/products")
+            .then((res) => res.json())
+            .then((response) => {
+              setCategorias(response.respuesta.count);
+            });
+        }, []);
+
+
+    let productInDataBase = {
+      
+        color: 'primary', 
+        titulo:"total de productos",
+        valor: categorias,
+        icono: 'fa-truck-loading'
+    }
 
 let amount = {
     color: "success",
-    titulo: "Total de ventas",
-    valor: 79,
+    titulo: "Total de usuarios",
+    valor: usuarios,
     icono: "fas fa-award",
 };
 
 let user = {
     color: "warning",
     titulo: "cantodad de categorias",
-    valor: 49,
+    valor: categoriasTotal,
     icono: "fas fa-user",
 };
 
 let cardProps = [productInDataBase, amount, user];
 
-function ContentRowTop() {
     return (
         <div className="row">
             {cardProps.map((producto, index) => {
@@ -32,5 +70,7 @@ function ContentRowTop() {
             })}
         </div>
     );
+
 }
+
 export default ContentRowTop;
