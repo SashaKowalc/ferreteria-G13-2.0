@@ -4,7 +4,7 @@ import ContentWrapper from './ContentWrapper';
 import CategoriaInDb from './CategoriaInDb';
 import UltimoProductoenDb from './UltimoproductoenDb';
 import ContentRowProductos from './ContentRowProductos';
-import BusquedaProductos from './BusquedaProductos';
+
 import {Link, Route, Switch} from 'react-router-dom';
 
 
@@ -17,12 +17,7 @@ function SideBar() {
                 className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
                 id="accordionSidebar"
             >
-                {/* <!-- Sidebar - Brand --> */}
-                 {/* <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                    <div className="sidebar-brand-icon">
-                        {/* <img className="w-100" src="{image}" alt="Digital House" /> */}
-                    {/* </div> */}
-                {/* </a> */} 
+           
 
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/" exact="true" >
                     <div className="sidebar-brand-icon">

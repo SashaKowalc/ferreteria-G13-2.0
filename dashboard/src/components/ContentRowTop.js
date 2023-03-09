@@ -18,14 +18,11 @@ function ContentRowTop() {
             <Route path="/ContentRowProductos" component={ContentRowProductos}/>
             <Route path="/UltimoProductoenDb" component={UltimoProductoenDb}/>
             <Route path="/CategoriaInDb" component={CategoriaInDb}/>
-            <ProductoLista />
             </Switch>
-            {/* <ContentRowCenter />
-            <ContentRowProductos /> */}
-  <div>
-                
-                </div> 
-            </div>
+            <ProductoLista />
+      
+        
+        </div>
         
     );
 }
