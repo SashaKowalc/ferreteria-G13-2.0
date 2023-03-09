@@ -2,12 +2,12 @@ import React from 'react';
 import { useEffect, useState} from 'react'
 
 
-function LastProductDb(){
+function UltimoProductoEnDb(){
 
     const [producto, setProducto] = useState([true])
 	
 	useEffect(()=>{
-		let endPoint = `http://localhost:3030/api/lastProduct`
+		let endPoint = `http://localhost:3030/api/ultimo`
 		fetch(endPoint)
 		.then((res)=>res.json())
 		.then((respuesta) => {
@@ -41,4 +41,4 @@ function LastProductDb(){
     )
 }
 
-export default LastProductDb;
+export default UltimoProductoEnDb;

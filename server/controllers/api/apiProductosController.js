@@ -61,7 +61,7 @@ const apiProductosController = {
 
 
     } ,
-        lastProduct: (req, res)=>{      
+        ultimo: (req, res)=>{      
         db.Productos.findOne ({
             order: [['producto_id', 'DESC']],
             limit: 1,
@@ -93,7 +93,7 @@ const apiProductosController = {
 
 },
 
-listProducts: (req, res) => {
+lista: (req, res) => {
     db.Productos
         .findAll()
         .then(product =>{

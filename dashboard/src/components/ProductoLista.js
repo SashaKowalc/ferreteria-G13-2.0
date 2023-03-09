@@ -6,7 +6,7 @@ function ProductoLista() {
     const [producto, setProducto] = useState([])
 	
 	useEffect(()=>{
-		let endPoint = `http://localhost:3030/api/listProducts`
+		let endPoint = `http://localhost:3030/api/lista`
 		fetch(endPoint)
 		.then(res=>res.json())
 		.then((data) => {
