@@ -27,7 +27,7 @@ function UltimoproductoEnDb(){
                     <div className="text-center">
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={producto.imagen} style={{width: 40 +'rem'}} alt=" product "/>
                     </div>
-                    <div>
+                    <div className='nose'>
                     <h2>{producto.nombre}</h2>
                     <p>marca:{producto.marca}</p>
                     <p>Modelo : {producto.modelo}</p>
