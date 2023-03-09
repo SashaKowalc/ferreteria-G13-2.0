@@ -18,7 +18,7 @@ function ProductoLista() {
     return (
       
     <div className="card shadow mb-4">
-      <h2>--TODOS LOS PRODUCTOS EN LA BASE DE DATOS</h2>
+      <h2>TODOS LOS PRODUCTOS EN LA BASE DE DATOS</h2>
     <div className="card-body">
         <div className="table-responsive">
             <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
