@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState} from 'react'
 
-
+import {Link, Route, Switch} from 'react-router-dom';
 function UltimoproductoEnDb(){
 
     const [producto, setProducto] = useState([true])
@@ -29,9 +29,12 @@ function UltimoproductoEnDb(){
                     </div>
                     <div>
                     <h2>{producto.nombre}</h2>
-                    <p>{producto.descripcion}</p>
+                    <p>marca:{producto.marca}</p>
+                    <p>Modelo : {producto.modelo}</p>
+                    <p>descripcion : {producto.descripcion}</p>
                     <h3 className=''>$ {producto.precio}</h3>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href='/'>View product detail</a>
+
+                    
                 </div>
                 </div>
             </div>

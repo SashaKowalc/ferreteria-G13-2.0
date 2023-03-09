@@ -9,8 +9,8 @@ function ProductoLista() {
 		let endPoint = `http://localhost:3030/api/lista`
 		fetch(endPoint)
 		.then(res=>res.json())
-		.then((data) => {
-				setProducto(data.data);
+		.then((respuesta) => {
+				setProducto(respuesta.data);
 			})
 		.catch(err => console.log(err))
 	}, [])
