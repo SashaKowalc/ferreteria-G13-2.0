@@ -51,14 +51,15 @@ let amount = {
     color: "success",
     titulo: "Total de usuarios",
     valor: usuarios,
-    icono: "fas fa-award",
+    
+    icono:"fas fa-user" ,
 };
 
 let user = {
     color: "warning",
     titulo: "cantidad de categorias",
     valor: categoriasTotal,
-    icono: "fas fa-user",
+    icono: "fas fa-award",
 };
 
 let cardProps = [productInDataBase, amount, user];
