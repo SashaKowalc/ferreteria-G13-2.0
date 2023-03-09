@@ -8942,10 +8942,10 @@ a:focus {
     color: #6e707e !important;
 }
 .text-gray-800 {
-    color: black !important;
+    color: white!important;
 }
 .text-gray-900 {
-    color: black !important;
+    color: white !important;
 }
 .icon-circle {
     height: 2.5rem;
