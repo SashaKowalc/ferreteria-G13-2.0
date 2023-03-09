@@ -4,7 +4,8 @@ import CategoriaInDb from "./CategoriaInDb";
 import ContentRowProductos from "./ContentRowProductos";
 import { Link, Route, Switch } from "react-router-dom";
 import ContentRowCenter from './ContentRowCenter';
-
+import UltimoproductoEnDb from "./UltimoproductoenDb";
+import ProductoLista from "./ProductoLista";
 
 
 function ContentRowTop() {
@@ -17,11 +18,13 @@ function ContentRowTop() {
             <Route path="/ContentRowProductos" component={ContentRowProductos}/>
             <Route path="/UltimoProductoenDb" component={UltimoProductoenDb}/>
             <Route path="/CategoriaInDb" component={CategoriaInDb}/>
-           
+            <ProductoLista />
             </Switch>
-            <ContentRowCenter />
-            <ContentRowProductos />
-
+            {/* <ContentRowCenter />
+            <ContentRowProductos /> */}
+  <div>
+                
+                </div> 
             </div>
         
     );

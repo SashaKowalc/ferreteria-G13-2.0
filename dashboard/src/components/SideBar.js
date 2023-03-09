@@ -17,12 +17,12 @@ function SideBar() {
                 className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
                 id="accordionSidebar"
             >
-                {/*<!-- Sidebar - Brand -->*/}
-                {/* <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                {/* <!-- Sidebar - Brand --> */}
+                 {/* <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src="{image}" alt="Digital House" />
-                    </div>
-                </a> */}
+                        {/* <img className="w-100" src="{image}" alt="Digital House" /> */}
+                    {/* </div> */}
+                {/* </a> */} 
 
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/" exact="true" >
                     <div className="sidebar-brand-icon">
@@ -71,11 +71,12 @@ function SideBar() {
                 {/*<!-- Divider -->*/}
               
               
-            
+             
             
             </ul>
             {/*<!-- End of Sidebar -->*/}
             {/* <Switch>
+            
              
             <Route path="/ContentRowProductos">
                     <ContentRowProductos />
