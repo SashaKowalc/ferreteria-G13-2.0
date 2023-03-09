@@ -56,7 +56,7 @@ let amount = {
 
 let user = {
     color: "warning",
-    titulo: "cantodad de categorias",
+    titulo: "cantidad de categorias",
     valor: categoriasTotal,
     icono: "fas fa-user",
 };
