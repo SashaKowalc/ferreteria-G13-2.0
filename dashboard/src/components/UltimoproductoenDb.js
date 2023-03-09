@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState} from 'react'
 
 
-function UltimoProductoEnDb(){
+function UltimoproductoEnDb(){
 
     const [producto, setProducto] = useState([true])
 	
@@ -41,4 +41,4 @@ function UltimoProductoEnDb(){
     )
 }
 
-export default UltimoProductoEnDb;
+export default UltimoproductoEnDb;

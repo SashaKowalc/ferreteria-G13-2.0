@@ -2,7 +2,7 @@ import React from 'react';
 import image from '../assets/images/img-logo.png';
 import ContentWrapper from './ContentWrapper';
 import CategoriaInDb from './CategoriaInDb';
-import UltimoProductoenDb from './UltimoProductoenDb';
+import UltimoProductoenDb from './UltimoproductoenDb';
 import ContentRowProductos from './ContentRowProductos';
 import BusquedaProductos from './BusquedaProductos';
 import {Link, Route, Switch} from 'react-router-dom';
